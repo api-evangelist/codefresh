@@ -1,0 +1,1852 @@
+{
+    "id": "213531ee18776296c411dfb955e6df56",
+    "name": "Codefresh API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "e2eb617b9fcbc8356ec9affe12d87e7e",
+            "name": "Get User",
+            "url": "httpsg.codefresh.io\/api\/user",
+            "description": "Get user.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "8dcd9e5f0dc550aba835ea5f28fc4a1d",
+            "name": "Post User Changeaccount Accountid",
+            "url": "httpsg.codefresh.io\/api\/user\/changeaccount\/{accountId}",
+            "description": "Post user changeaccount accountid.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "accountId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "bb3c321545bf47781a64cb780b33bf82",
+            "name": "Get Progress",
+            "url": "httpsg.codefresh.io\/api\/progress\/{id}",
+            "description": "Get progress.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "0ad30fbca3fd660a134c04f994a592c1",
+            "name": "Get Progress Download",
+            "url": "httpsg.codefresh.io\/api\/progress\/download\/{id}",
+            "description": "Get progress download.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "3ff451a6569884738c4994813335c719",
+            "name": "Get Repos Settings Repoowner Reponame",
+            "url": "httpsg.codefresh.io\/api\/repos\/settings\/{repoOwner}\/{repoName}",
+            "description": "Get repos settings repoowner reponame.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "38defdd95641be91d90ec28cc00dc397",
+            "name": "Post Repos Settings",
+            "url": "httpsg.codefresh.io\/api\/repos\/settings",
+            "description": "Post repos settings.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "settings",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "b051344715203ee6a1158b5a30782a89",
+            "name": "Get Images",
+            "url": "httpsg.codefresh.io\/api\/images",
+            "description": "Get images.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "feaba8fa98ee8ca4dc4ddb99e5482126",
+            "name": "Post Images External",
+            "url": "httpsg.codefresh.io\/api\/images\/external",
+            "description": "Post images external.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "919c83823079d8349737967c06b189c3",
+            "name": "Parameters Images External",
+            "url": "httpsg.codefresh.io\/api\/images\/external",
+            "description": "Parameters images external.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "parameters",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "ee8154d51c0b8009e51ad52864d6c773",
+            "name": "Get Images Imageid",
+            "url": "httpsg.codefresh.io\/api\/images\/{imageId}",
+            "description": "Get images imageid.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "imageId",
+                    "description": "id of the Image",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "eba5f972c55e61f8d77377499ceac821",
+            "name": "Get Images Imagename Tags",
+            "url": "httpsg.codefresh.io\/api\/images\/{imageName}\/tags",
+            "description": "Get images imagename tags.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "imageName",
+                    "description": "name of the image",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "71122a38ee9cf032cfe57b857e0b1ede",
+            "name": "Get Images Internalimageid Metadata",
+            "url": "httpsg.codefresh.io\/api\/images\/{internalImageId}\/metadata",
+            "description": "Get images internalimageid metadata.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "internalImageId",
+                    "description": "id of the Image (from docker inspect)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "bdf42b18892373867fe107991ae2a5cb",
+            "name": "Post Images Internalimageid Metadata",
+            "url": "httpsg.codefresh.io\/api\/images\/{internalImageId}\/metadata",
+            "description": "Post images internalimageid metadata.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "internalImageId",
+                    "description": "id of the Image (from docker inspect)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "data",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "114e6f9c0bcd69ddd6069406905d0f5f",
+            "name": "Delete Images Internalimageid Metadata Keyname",
+            "url": "httpsg.codefresh.io\/api\/images\/{internalImageId}\/metadata\/{keyName}",
+            "description": "Delete images internalimageid metadata keyname.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "internalImageId",
+                    "description": "id of the Image (from docker inspect)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "keyName",
+                    "description": "name of the metadata key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "be1be990aa82c95e99ecf03bf22206f6",
+            "name": "Post Runtime Testit",
+            "url": "httpsg.codefresh.io\/api\/runtime\/testit",
+            "description": "Post runtime testit.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "options",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "f3b85960e83b1005b46976d867baace4",
+            "name": "Get Pipelines",
+            "url": "httpsg.codefresh.io\/api\/pipelines",
+            "description": "Get pipelines.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "e02d2451b592fba539e1715975c0494b",
+            "name": "Post Pipelines",
+            "url": "httpsg.codefresh.io\/api\/pipelines",
+            "description": "Post pipelines.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "71222e030bd26fccb0928375874c4770",
+            "name": "Get Pipelines Name",
+            "url": "httpsg.codefresh.io\/api\/pipelines\/{name}",
+            "description": "Get pipelines name.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "name",
+                    "description": "Name of pipeline",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "ee395637d91bf699db548633a71aaa26",
+            "name": "Put Pipelines Name",
+            "url": "httpsg.codefresh.io\/api\/pipelines\/{name}",
+            "description": "Put pipelines name.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "name",
+                    "description": "Name of pipeline",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "04d59eab8cc49ace2d68051f500887f6",
+            "name": "Delete Pipelines Name",
+            "url": "httpsg.codefresh.io\/api\/pipelines\/{name}",
+            "description": "Delete pipelines name.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "name",
+                    "description": "Name of pipeline",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "a3ad2cb7c6585797c4ce74c0a5b4dba0",
+            "name": "Get Admin Accounts",
+            "url": "httpsg.codefresh.io\/api\/admin\/accounts",
+            "description": "Get admin accounts.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "226046bb53dd0101a574156075709d77",
+            "name": "Post Admin Accounts",
+            "url": "httpsg.codefresh.io\/api\/admin\/accounts",
+            "description": "Post admin accounts.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "e2836156c7af7fc1065f1c306a79cc2d",
+            "name": "Get Admin Accounts",
+            "url": "httpsg.codefresh.io\/api\/admin\/accounts\/{id}",
+            "description": "Get admin accounts.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "512be025d08ebeb86549dbfc196119ce",
+            "name": "Delete Admin Accounts",
+            "url": "httpsg.codefresh.io\/api\/admin\/accounts\/{id}",
+            "description": "Delete admin accounts.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "411a2a8d89ce59472910482ceaadc422",
+            "name": "Post Admin Accounts Update",
+            "url": "httpsg.codefresh.io\/api\/admin\/accounts\/{id}\/update",
+            "description": "Post admin accounts update.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "accountDetails",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "c4b87e45d745bc941f3469c989badc59",
+            "name": "Post Admin Accounts Addpendinguser",
+            "url": "httpsg.codefresh.io\/api\/admin\/accounts\/addpendinguser",
+            "description": "Post admin accounts addpendinguser.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "newUser",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "14b66b366e50408f28c84c3d0d1ceaf2",
+            "name": "Get Accounts Users",
+            "url": "httpsg.codefresh.io\/api\/accounts\/{id}\/users",
+            "description": "Get accounts users.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "f19acf647671b2ae71c3361606227507",
+            "name": "Post Accounts Update",
+            "url": "httpsg.codefresh.io\/api\/accounts\/{id}\/update",
+            "description": "Post accounts update.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "updateData",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "005e42faf186de87ee9c5169139bf35d",
+            "name": "Post Accounts Adduser",
+            "url": "httpsg.codefresh.io\/api\/accounts\/{id}\/adduser",
+            "description": "Post accounts adduser.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "newUser",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "767d9f5cca8daae918e253862c9592a9",
+            "name": "Post Accounts Adduser",
+            "url": "httpsg.codefresh.io\/api\/accounts\/{accountId}\/{userId}\/adduser",
+            "description": "Post accounts adduser.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "accountId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "userId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "bcd7b6fb2df239b206d8f225c375890c",
+            "name": "Delete Accounts",
+            "url": "httpsg.codefresh.io\/api\/accounts\/{accountId}\/{userId}",
+            "description": "Delete accounts.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "accountId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "userId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "3b364e61f8c979cb1924e4e069b81fc3",
+            "name": "Post Accounts Updateuser",
+            "url": "httpsg.codefresh.io\/api\/accounts\/{id}\/updateuser",
+            "description": "Post accounts updateuser.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "userDetails",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "4623f5d42b98c133205395a6c946dadb",
+            "name": "Post Accounts Admin",
+            "url": "httpsg.codefresh.io\/api\/accounts\/{accountId}\/{userId}\/admin",
+            "description": "Post accounts admin.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "accountId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "userId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "c20f9265fbcf6abc3ad80aad12bb3fc0",
+            "name": "Delete Accounts Admin",
+            "url": "httpsg.codefresh.io\/api\/accounts\/{accountId}\/{userId}\/admin",
+            "description": "Delete accounts admin.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "accountId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "userId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "3bf40d7307948b04ea339b4e772aac91",
+            "name": "Post Provers Github Hook",
+            "url": "httpsg.codefresh.io\/api\/providers\/github\/hook",
+            "description": "Post provers github hook.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "x",
+                    "description": "event type of this hook",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "send",
+                    "description": "will this hook send notification to related users",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ref",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "after",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "commits",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "head_commit",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "repository",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sender",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "eaeb4b67edf818e77d3a3b571174ee16",
+            "name": "Get Builds Buildid",
+            "url": "httpsg.codefresh.io\/api\/builds\/{buildId}",
+            "description": "Get builds buildid.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "6fdf194c96bcfb19c00a420c13e3775d",
+            "name": "Post Builds Serviceid",
+            "url": "httpsg.codefresh.io\/api\/builds\/{serviceId}",
+            "description": "Post builds serviceid.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "options",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "e280eac974e649885cee95a07851ab31",
+            "name": "Post Builds Buildid Update",
+            "url": "httpsg.codefresh.io\/api\/builds\/{buildId}\/update",
+            "description": "Post builds buildid update.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "options",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "fb53141fc4440d971a98d6980cf5ebff",
+            "name": "Get Builds",
+            "url": "httpsg.codefresh.io\/api\/builds",
+            "description": "Get builds.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "account",
+                    "description": "account name",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "repoOwner",
+                    "description": "repo owner",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "repoName",
+                    "description": "repo name",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "3b96195301034d4361d16b6f1c01997f",
+            "name": "Get Environments",
+            "url": "httpsg.codefresh.io\/api\/environments",
+            "description": "Get environments.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "16eaa2864e03ddbed28c946719677c1d",
+            "name": "Get Environments Status",
+            "url": "httpsg.codefresh.io\/api\/environments\/{id}\/status",
+            "description": "Get environments status.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "602adcc5246913b30179f4619a675219",
+            "name": "Get Environments Stop",
+            "url": "httpsg.codefresh.io\/api\/environments\/{id}\/stop",
+            "description": "Get environments stop.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "2cfc4ca12bf754ab62ca64498e7432fb",
+            "name": "Get Environments Start",
+            "url": "httpsg.codefresh.io\/api\/environments\/{id}\/start",
+            "description": "Get environments start.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "aee435e9237a23f925b416a6405b6a6c",
+            "name": "Get Environments Pause",
+            "url": "httpsg.codefresh.io\/api\/environments\/{id}\/pause",
+            "description": "Get environments pause.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "33cb5e80f91e61bbb3ef3d9a90da86ea",
+            "name": "Get Environments Unpause",
+            "url": "httpsg.codefresh.io\/api\/environments\/{id}\/unpause",
+            "description": "Get environments unpause.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "50e3b3046e0b2cf153bbf804fe5557fc",
+            "name": "Get Environments Terminate",
+            "url": "httpsg.codefresh.io\/api\/environments\/{id}\/terminate",
+            "description": "Get environments terminate.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "8cf912d82715b8d393ded4f4de69bdf8",
+            "name": "Get Environments All Terminate",
+            "url": "httpsg.codefresh.io\/api\/environments\/all\/terminate",
+            "description": "Get environments all terminate.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "fdc9cfa7fd532e3d8be614c6672dba0e",
+            "name": "Get Environments Rename Newname",
+            "url": "httpsg.codefresh.io\/api\/environments\/{id}\/rename\/{newName}",
+            "description": "Get environments rename newname.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The ID of the environment to rename",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "newName",
+                    "description": "The new name to assign to the environment",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "d580ae430f1220e3dc44584274efea3c",
+            "name": "Get Payments Plans",
+            "url": "httpsg.codefresh.io\/api\/payments\/plans",
+            "description": "Get payments plans.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "c2832a8dd22978e62e219df2b9d9b093",
+            "name": "Get Payments",
+            "url": "httpsg.codefresh.io\/api\/payments",
+            "description": "Get payments.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "5a432fb51c5499c4508b951f6f36ce05",
+            "name": "Post Payments",
+            "url": "httpsg.codefresh.io\/api\/payments",
+            "description": "Post payments.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "data",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "6b5715a6069de9dad7e10cf0da2996a4",
+            "name": "Get Compositions",
+            "url": "httpsg.codefresh.io\/api\/compositions",
+            "description": "Get compositions.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "bbef9b2e40fb543e1110e44c16ba511c",
+            "name": "Post Compositions",
+            "url": "httpsg.codefresh.io\/api\/compositions",
+            "description": "Post compositions.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "payload",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "0bba6e9f6df5ff8325cd8c3437f18c53",
+            "name": "Get Compositions Entifier",
+            "url": "httpsg.codefresh.io\/api\/compositions\/{identifier}",
+            "description": "Get compositions entifier.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "identifier",
+                    "description": "id or name of a composition",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "b152ab5ab505bb2e2c324e3535870d82",
+            "name": "Post Compositions Duplicate",
+            "url": "httpsg.codefresh.io\/api\/compositions\/{id}\/duplicate",
+            "description": "Post compositions duplicate.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "6a0ee4106dc1d90383e3599735e417bf",
+            "name": "Put Compositions",
+            "url": "httpsg.codefresh.io\/api\/compositions\/{id}",
+            "description": "Put compositions.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "payload",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "3ff757ed04df1b68af9a3e746c79612b",
+            "name": "Delete Compositions",
+            "url": "httpsg.codefresh.io\/api\/compositions\/{id}",
+            "description": "Delete compositions.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "ad74a11dfd63b6c223a8849615588d53",
+            "name": "Post Compositions Entifier Run",
+            "url": "httpsg.codefresh.io\/api\/compositions\/{identifier}\/run",
+            "description": "Post compositions entifier run.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "identifier",
+                    "description": "id or name of a composition",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "payload",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "78374ab2c2ea22dae2ea4d1111f0f84c",
+            "name": "Post Workflow Repoowner Reponame File",
+            "url": "httpsg.codefresh.io\/api\/workflow\/{repoOwner}\/{repoName}\/file",
+            "description": "Post workflow repoowner reponame file.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "repoOwner",
+                    "description": "The name of the repo owner",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "repoName",
+                    "description": "The name of the repo",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "options",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "6995b8db57452f9e4b8b7cdd06aa6bb3",
+            "name": "Get Workflow",
+            "url": "httpsg.codefresh.io\/api\/workflow",
+            "description": "Get workflow.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "query",
+                    "description": "Fields to search by",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "f3359eb4be0c0718840013c2a429e99a",
+            "name": "Get Features Accountid",
+            "url": "httpsg.codefresh.io\/api\/features\/{accountId}",
+            "description": "Get features accountid.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "accountId",
+                    "description": "id of an object",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        },
+        {
+            "id": "1b91100e9a35664fe481a61bbbe64b27",
+            "name": "Post Registry Auth Token",
+            "url": "httpsg.codefresh.io\/api\/registry\/auth\/token",
+            "description": "Post registry auth token.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "options",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "rawModeData": ""
+        }
+    ]
+}
