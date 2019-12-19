@@ -1,0 +1,858 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "Codefresh API",
+        "description": "Codefresh api swagger-2.0 specification",
+        "termsOfService": "http:\/\/www.codefresh.io"
+    },
+    "servers": [
+        "httpsg.codefresh.io\/api"
+    ],
+    "paths": {
+        "\/user": {
+            "get": {
+                "summary": "Get User",
+                "description": "Get user.",
+                "operationId": "GetUser",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/user\/changeaccount\/{accountId}": {
+            "post": {
+                "summary": "Post User Changeaccount Accountid",
+                "description": "Post user changeaccount accountid.",
+                "operationId": "PostUserChangeaccountAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "description": "id of an object"
+                    }
+                ]
+            }
+        },
+        "\/progress\/{id}": {
+            "get": {
+                "summary": "Get Progress",
+                "description": "Get progress.",
+                "operationId": "GetProgress",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/progress\/download\/{id}": {
+            "get": {
+                "summary": "Get Progress Download",
+                "description": "Get progress download.",
+                "operationId": "GetProgressDownload",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/repos\/settings\/{repoOwner}\/{repoName}": {
+            "get": {
+                "summary": "Get Repos Settings Repoowner Reponame",
+                "description": "Get repos settings repoowner reponame.",
+                "operationId": "GetReposSettingsRepoownerReponame",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/repos\/settings": {
+            "post": {
+                "summary": "Post Repos Settings",
+                "description": "Post repos settings.",
+                "operationId": "PostReposSettings",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "settings",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/images": {
+            "get": {
+                "summary": "Get Images",
+                "description": "Get images.",
+                "operationId": "GetImages",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/images\/external": {
+            "post": {
+                "summary": "Post Images External",
+                "description": "Post images external.",
+                "operationId": "PostImagesExternal",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Images External",
+                "description": "Parameters images external.",
+                "operationId": "ParametersImagesExternal",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/images\/{imageId}": {
+            "get": {
+                "summary": "Get Images Imageid",
+                "description": "Get images imageid.",
+                "operationId": "GetImagesImage",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "imageId",
+                        "in": "path",
+                        "description": "id of the Image"
+                    }
+                ]
+            }
+        },
+        "\/images\/{imageName}\/tags": {
+            "get": {
+                "summary": "Get Images Imagename Tags",
+                "description": "Get images imagename tags.",
+                "operationId": "GetImagesImagenameTags",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "imageName",
+                        "in": "path",
+                        "description": "name of the image"
+                    }
+                ]
+            }
+        },
+        "\/images\/{internalImageId}\/metadata": {
+            "get": {
+                "summary": "Get Images Internalimageid Metadata",
+                "description": "Get images internalimageid metadata.",
+                "operationId": "GetImagesInternalimageMetadata",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "internalImageId",
+                        "in": "path",
+                        "description": "id of the Image (from docker inspect)"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Post Images Internalimageid Metadata",
+                "description": "Post images internalimageid metadata.",
+                "operationId": "PostImagesInternalimageMetadata",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "internalImageId",
+                        "in": "path",
+                        "description": "id of the Image (from docker inspect)"
+                    },
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/images\/{internalImageId}\/metadata\/{keyName}": {
+            "delete": {
+                "summary": "Delete Images Internalimageid Metadata Keyname",
+                "description": "Delete images internalimageid metadata keyname.",
+                "operationId": "DeleteImagesInternalimageMetadataKeyname",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "internalImageId",
+                        "in": "path",
+                        "description": "id of the Image (from docker inspect)"
+                    },
+                    {
+                        "name": "keyName",
+                        "in": "path",
+                        "description": "name of the metadata key"
+                    }
+                ]
+            }
+        },
+        "\/runtime\/testit": {
+            "post": {
+                "summary": "Post Runtime Testit",
+                "description": "Post runtime testit.",
+                "operationId": "PostRuntimeTestit",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "options",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/pipelines": {
+            "get": {
+                "summary": "Get Pipelines",
+                "description": "Get pipelines.",
+                "operationId": "GetPipelines",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Pipelines",
+                "description": "Post pipelines.",
+                "operationId": "PostPipelines",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/pipelines\/{name}": {
+            "get": {
+                "summary": "Get Pipelines Name",
+                "description": "Get pipelines name.",
+                "operationId": "GetPipelinesName",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Name of pipeline"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Put Pipelines Name",
+                "description": "Put pipelines name.",
+                "operationId": "PutPipelinesName",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Name of pipeline"
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Delete Pipelines Name",
+                "description": "Delete pipelines name.",
+                "operationId": "DeletePipelinesName",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Name of pipeline"
+                    }
+                ]
+            }
+        },
+        "\/admin\/accounts": {
+            "get": {
+                "summary": "Get Admin Accounts",
+                "description": "Get admin accounts.",
+                "operationId": "GetAdminAccounts",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Admin Accounts",
+                "description": "Post admin accounts.",
+                "operationId": "PostAdminAccounts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/admin\/accounts\/{id}": {
+            "get": {
+                "summary": "Get Admin Accounts",
+                "description": "Get admin accounts.",
+                "operationId": "GetAdminAccounts",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "delete": {
+                "summary": "Delete Admin Accounts",
+                "description": "Delete admin accounts.",
+                "operationId": "DeleteAdminAccounts",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/admin\/accounts\/{id}\/update": {
+            "post": {
+                "summary": "Post Admin Accounts Update",
+                "description": "Post admin accounts update.",
+                "operationId": "PostAdminAccountsUpdate",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accountDetails",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/admin\/accounts\/addpendinguser": {
+            "post": {
+                "summary": "Post Admin Accounts Addpendinguser",
+                "description": "Post admin accounts addpendinguser.",
+                "operationId": "PostAdminAccountsAddpendinguser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "newUser",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{id}\/users": {
+            "get": {
+                "summary": "Get Accounts Users",
+                "description": "Get accounts users.",
+                "operationId": "GetAccountsUsers",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/accounts\/{id}\/update": {
+            "post": {
+                "summary": "Post Accounts Update",
+                "description": "Post accounts update.",
+                "operationId": "PostAccountsUpdate",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "updateData",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{id}\/adduser": {
+            "post": {
+                "summary": "Post Accounts Adduser",
+                "description": "Post accounts adduser.",
+                "operationId": "PostAccountsAdduser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "newUser",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{accountId}\/{userId}\/adduser": {
+            "post": {
+                "summary": "Post Accounts Adduser",
+                "description": "Post accounts adduser.",
+                "operationId": "PostAccountsAccountUserAdduser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "description": "id of an object"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "id of an object"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{accountId}\/{userId}": {
+            "delete": {
+                "summary": "Delete Accounts",
+                "description": "Delete accounts.",
+                "operationId": "DeleteAccountsAccountUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "description": "id of an object"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "id of an object"
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{id}\/updateuser": {
+            "post": {
+                "summary": "Post Accounts Updateuser",
+                "description": "Post accounts updateuser.",
+                "operationId": "PostAccountsUpdateuser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "userDetails",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/accounts\/{accountId}\/{userId}\/admin": {
+            "post": {
+                "summary": "Post Accounts Admin",
+                "description": "Post accounts admin.",
+                "operationId": "PostAccountsAccountUserAdmin",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "description": "id of an object"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "id of an object"
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Delete Accounts Admin",
+                "description": "Delete accounts admin.",
+                "operationId": "DeleteAccountsAccountUserAdmin",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "description": "id of an object"
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "id of an object"
+                    }
+                ]
+            }
+        },
+        "\/providers\/github\/hook": {
+            "post": {
+                "summary": "Post Provers Github Hook",
+                "description": "Post provers github hook.",
+                "operationId": "PostProversGithubHook",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "x",
+                        "in": "header",
+                        "description": "event type of this hook"
+                    },
+                    {
+                        "name": "send",
+                        "in": "header",
+                        "description": "will this hook send notification to related users"
+                    },
+                    {
+                        "name": "ref",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "after",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "commits",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "head_commit",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "repository",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "sender",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/builds\/{buildId}": {
+            "get": {
+                "summary": "Get Builds Buildid",
+                "description": "Get builds buildid.",
+                "operationId": "GetBuildsBuild",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/builds\/{serviceId}": {
+            "post": {
+                "summary": "Post Builds Serviceid",
+                "description": "Post builds serviceid.",
+                "operationId": "PostBuildsService",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "options",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/builds\/{buildId}\/update": {
+            "post": {
+                "summary": "Post Builds Buildid Update",
+                "description": "Post builds buildid update.",
+                "operationId": "PostBuildsBuildUpdate",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "options",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/builds": {
+            "get": {
+                "summary": "Get Builds",
+                "description": "Get builds.",
+                "operationId": "GetBuilds",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account",
+                        "in": "query",
+                        "description": "account name"
+                    },
+                    {
+                        "name": "repoOwner",
+                        "in": "query",
+                        "description": "repo owner"
+                    },
+                    {
+                        "name": "repoName",
+                        "in": "query",
+                        "description": "repo name"
+                    }
+                ]
+            }
+        },
+        "\/environments": {
+            "get": {
+                "summary": "Get Environments",
+                "description": "Get environments.",
+                "operationId": "GetEnvironments",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{id}\/status": {
+            "get": {
+                "summary": "Get Environments Status",
+                "description": "Get environments status.",
+                "operationId": "GetEnvironmentsStatus",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{id}\/stop": {
+            "get": {
+                "summary": "Get Environments Stop",
+                "description": "Get environments stop.",
+                "operationId": "GetEnvironmentsStop",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{id}\/start": {
+            "get": {
+                "summary": "Get Environments Start",
+                "description": "Get environments start.",
+                "operationId": "GetEnvironmentsStart",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{id}\/pause": {
+            "get": {
+                "summary": "Get Environments Pause",
+                "description": "Get environments pause.",
+                "operationId": "GetEnvironmentsPause",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{id}\/unpause": {
+            "get": {
+                "summary": "Get Environments Unpause",
+                "description": "Get environments unpause.",
+                "operationId": "GetEnvironmentsUnpause",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{id}\/terminate": {
+            "get": {
+                "summary": "Get Environments Terminate",
+                "description": "Get environments terminate.",
+                "operationId": "GetEnvironmentsTerminate",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/all\/terminate": {
+            "get": {
+                "summary": "Get Environments All Terminate",
+                "description": "Get environments all terminate.",
+                "operationId": "GetEnvironmentsAllTerminate",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{id}\/rename\/{newName}": {
+            "get": {
+                "summary": "Get Environments Rename Newname",
+                "description": "Get environments rename newname.",
+                "operationId": "GetEnvironmentsRenameNewname",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The ID of the environment to rename"
+                    },
+                    {
+                        "name": "newName",
+                        "in": "path",
+                        "description": "The new name to assign to the environment"
+                    }
+                ]
+            }
+        },
+        "\/payments\/plans": {
+            "get": {
+                "summary": "Get Payments Plans",
+                "description": "Get payments plans.",
+                "operationId": "GetPaymentsPlans",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/payments": {
+            "get": {
+                "summary": "Get Payments",
+                "description": "Get payments.",
+                "operationId": "GetPayments",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Payments",
+                "description": "Post payments.",
+                "operationId": "PostPayments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "data",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/compositions": {
+            "get": {
+                "summary": "Get Compositions",
+                "description": "Get compositions.",
+                "operationId": "GetCompositions",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Compositions",
+                "description": "Post compositions.",
+                "operationId": "PostCompositions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/compositions\/{identifier}": {
+            "get": {
+                "summary": "Get Compositions Entifier",
+                "description": "Get compositions entifier.",
+                "operationId": "GetCompositionsEntifier",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "identifier",
+                        "in": "path",
+                        "description": "id or name of a composition"
+                    }
+                ]
+            }
+        },
+        "\/compositions\/{id}\/duplicate": {
+            "post": {
+                "summary": "Post Compositions Duplicate",
+                "description": "Post compositions duplicate.",
+                "operationId": "PostCompositionsDuplicate",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/compositions\/{id}": {
+            "put": {
+                "summary": "Put Compositions",
+                "description": "Put compositions.",
+                "operationId": "PutCompositions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Delete Compositions",
+                "description": "Delete compositions.",
+                "operationId": "DeleteCompositions",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/compositions\/{identifier}\/run": {
+            "post": {
+                "summary": "Post Compositions Entifier Run",
+                "description": "Post compositions entifier run.",
+                "operationId": "PostCompositionsEntifierRun",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "identifier",
+                        "in": "path",
+                        "description": "id or name of a composition"
+                    },
+                    {
+                        "name": "payload",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/workflow\/{repoOwner}\/{repoName}\/file": {
+            "post": {
+                "summary": "Post Workflow Repoowner Reponame File",
+                "description": "Post workflow repoowner reponame file.",
+                "operationId": "PostWorkflowRepoownerReponameFile",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "repoOwner",
+                        "in": "path",
+                        "description": "The name of the repo owner"
+                    },
+                    {
+                        "name": "repoName",
+                        "in": "path",
+                        "description": "The name of the repo"
+                    },
+                    {
+                        "name": "options",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/workflow": {
+            "get": {
+                "summary": "Get Workflow",
+                "description": "Get workflow.",
+                "operationId": "GetWorkflow",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "query",
+                        "in": "query",
+                        "description": "Fields to search by"
+                    }
+                ]
+            }
+        },
+        "\/features\/{accountId}": {
+            "get": {
+                "summary": "Get Features Accountid",
+                "description": "Get features accountid.",
+                "operationId": "GetFeaturesAccount",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accountId",
+                        "in": "path",
+                        "description": "id of an object"
+                    }
+                ]
+            }
+        },
+        "\/registry\/auth\/token": {
+            "post": {
+                "summary": "Post Registry Auth Token",
+                "description": "Post registry auth token.",
+                "operationId": "PostRegistryAuthToken",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "options",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": []
+    }
+}
