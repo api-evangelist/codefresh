@@ -1,0 +1,86 @@
+{
+    "name": "Codefresh",
+    "description": "Docker Automation and Collaboration for Agile Teams. Codefresh lets dev, QA and product work together on Docker compositions, including CI\/CD, manual testing and feature previews.Codefresh enables you to instantly leverage all the benefits of Docker, w...",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28738-codefresh-io.jpg",
+    "tags": [
+        "have api",
+        "orchestration",
+        "relative data",
+        "service api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/codefresh\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Codefresh API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28738-codefresh-io.jpg",
+            "humanURL": "https:\/\/codefresh.io",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/codefresh-api.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/codefresh-api-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/codefresh.io\/blog\/"
+        },
+        {
+            "type": "Command Line Interface",
+            "url": "https:\/\/codefresh-io.github.io\/cli\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/code-fresh"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/codefresh.io\/docs\/"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/codefresh-io"
+        },
+        {
+            "type": "Plugins",
+            "url": "https:\/\/github.com\/codefresh-io\/plugins"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/codefresh.io\/pricing\/"
+        },
+        {
+            "type": "Privacy Policy",
+            "url": "https:\/\/codefresh.io\/docs\/docs\/terms-and-privacy-policy\/privacy-policy\/"
+        },
+        {
+            "type": "Status",
+            "url": "http:\/\/status.codefresh.io\/"
+        },
+        {
+            "type": "Terms of Service",
+            "url": "https:\/\/codefresh.io\/docs\/docs\/terms-and-privacy-policy\/terms-of-service\/"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/codefresh"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/codefresh.io"
+        }
+    ]
+}
