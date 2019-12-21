@@ -1,5 +1,5 @@
 {
-    "id": "213531ee18776296c411dfb955e6df56",
+    "id": "e7132d237ac7e3d98657cc310ffb90f6",
     "name": "Codefresh API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "e2eb617b9fcbc8356ec9affe12d87e7e",
+            "id": "3c3bf72babf65b4ac1ca4516b2da2b26",
             "name": "Get User",
             "url": "httpsg.codefresh.io\/api\/user",
             "description": "Get user.",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "8dcd9e5f0dc550aba835ea5f28fc4a1d",
+            "id": "3358e8884156f5bfeb678cdd67a5bd75",
             "name": "Post User Changeaccount Accountid",
             "url": "httpsg.codefresh.io\/api\/user\/changeaccount\/{accountId}",
             "description": "Post user changeaccount accountid.",
@@ -60,11 +60,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "bb3c321545bf47781a64cb780b33bf82",
+            "id": "834208689e5f5343a6b7a8f4b7375c67",
             "name": "Get Progress",
             "url": "httpsg.codefresh.io\/api\/progress\/{id}",
             "description": "Get progress.",
@@ -83,11 +83,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "0ad30fbca3fd660a134c04f994a592c1",
+            "id": "85a15a4c1e7ab7f120c0dec56899d34e",
             "name": "Get Progress Download",
             "url": "httpsg.codefresh.io\/api\/progress\/download\/{id}",
             "description": "Get progress download.",
@@ -106,11 +106,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "3ff451a6569884738c4994813335c719",
+            "id": "7b764a4cf12b09adca8478849a055830",
             "name": "Get Repos Settings Repoowner Reponame",
             "url": "httpsg.codefresh.io\/api\/repos\/settings\/{repoOwner}\/{repoName}",
             "description": "Get repos settings repoowner reponame.",
@@ -129,11 +129,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "38defdd95641be91d90ec28cc00dc397",
+            "id": "800c8f00d44599596d76fdf41f296239",
             "name": "Post Repos Settings",
             "url": "httpsg.codefresh.io\/api\/repos\/settings",
             "description": "Post repos settings.",
@@ -160,11 +160,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "b051344715203ee6a1158b5a30782a89",
+            "id": "e9bf8fddf6d0982762ff74a63356ba92",
             "name": "Get Images",
             "url": "httpsg.codefresh.io\/api\/images",
             "description": "Get images.",
@@ -183,11 +183,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "feaba8fa98ee8ca4dc4ddb99e5482126",
+            "id": "a0aaacdfd694fdaab923d29f8a4b2aa6",
             "name": "Post Images External",
             "url": "httpsg.codefresh.io\/api\/images\/external",
             "description": "Post images external.",
@@ -206,11 +206,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "919c83823079d8349737967c06b189c3",
+            "id": "10ab906329a3c8be7f12b51ce99e711f",
             "name": "Parameters Images External",
             "url": "httpsg.codefresh.io\/api\/images\/external",
             "description": "Parameters images external.",
@@ -229,11 +229,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "ee8154d51c0b8009e51ad52864d6c773",
+            "id": "b39a4453735c47cbdd3335dfe8ea2e1b",
             "name": "Get Images Imageid",
             "url": "httpsg.codefresh.io\/api\/images\/{imageId}",
             "description": "Get images imageid.",
@@ -260,11 +260,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "eba5f972c55e61f8d77377499ceac821",
+            "id": "a6e9211a042eb478e656da8090e36a45",
             "name": "Get Images Imagename Tags",
             "url": "httpsg.codefresh.io\/api\/images\/{imageName}\/tags",
             "description": "Get images imagename tags.",
@@ -291,11 +291,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "71122a38ee9cf032cfe57b857e0b1ede",
+            "id": "b0e760817892ebd77e903de81a85f0b6",
             "name": "Get Images Internalimageid Metadata",
             "url": "httpsg.codefresh.io\/api\/images\/{internalImageId}\/metadata",
             "description": "Get images internalimageid metadata.",
@@ -322,11 +322,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "bdf42b18892373867fe107991ae2a5cb",
+            "id": "7696bbe77c8cc7013630149812c8f379",
             "name": "Post Images Internalimageid Metadata",
             "url": "httpsg.codefresh.io\/api\/images\/{internalImageId}\/metadata",
             "description": "Post images internalimageid metadata.",
@@ -360,11 +360,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "114e6f9c0bcd69ddd6069406905d0f5f",
+            "id": "e124e0b410f006a26adb931401623e59",
             "name": "Delete Images Internalimageid Metadata Keyname",
             "url": "httpsg.codefresh.io\/api\/images\/{internalImageId}\/metadata\/{keyName}",
             "description": "Delete images internalimageid metadata keyname.",
@@ -398,11 +398,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "be1be990aa82c95e99ecf03bf22206f6",
+            "id": "7806f3b6eecdb5ee0d4b9807864db969",
             "name": "Post Runtime Testit",
             "url": "httpsg.codefresh.io\/api\/runtime\/testit",
             "description": "Post runtime testit.",
@@ -429,11 +429,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "f3b85960e83b1005b46976d867baace4",
+            "id": "a9c8cfc2a212c452d56d9eaad873ec3d",
             "name": "Get Pipelines",
             "url": "httpsg.codefresh.io\/api\/pipelines",
             "description": "Get pipelines.",
@@ -452,11 +452,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "e02d2451b592fba539e1715975c0494b",
+            "id": "7e3454f9886663c48567306c2f89b667",
             "name": "Post Pipelines",
             "url": "httpsg.codefresh.io\/api\/pipelines",
             "description": "Post pipelines.",
@@ -475,11 +475,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "71222e030bd26fccb0928375874c4770",
+            "id": "324298d327011ead7c5e9885c4c44949",
             "name": "Get Pipelines Name",
             "url": "httpsg.codefresh.io\/api\/pipelines\/{name}",
             "description": "Get pipelines name.",
@@ -506,11 +506,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "ee395637d91bf699db548633a71aaa26",
+            "id": "9cb4867a4e131a3adb5ffb4251624dc8",
             "name": "Put Pipelines Name",
             "url": "httpsg.codefresh.io\/api\/pipelines\/{name}",
             "description": "Put pipelines name.",
@@ -537,11 +537,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "04d59eab8cc49ace2d68051f500887f6",
+            "id": "a4ba472031980f1262b424f5ad2005d5",
             "name": "Delete Pipelines Name",
             "url": "httpsg.codefresh.io\/api\/pipelines\/{name}",
             "description": "Delete pipelines name.",
@@ -568,11 +568,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "a3ad2cb7c6585797c4ce74c0a5b4dba0",
+            "id": "5c621f9d2d8cf9b4a26d36e0ca9e158d",
             "name": "Get Admin Accounts",
             "url": "httpsg.codefresh.io\/api\/admin\/accounts",
             "description": "Get admin accounts.",
@@ -591,11 +591,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "226046bb53dd0101a574156075709d77",
+            "id": "ac2f5c289d8ab0f91c4133d9bfb3af4a",
             "name": "Post Admin Accounts",
             "url": "httpsg.codefresh.io\/api\/admin\/accounts",
             "description": "Post admin accounts.",
@@ -622,11 +622,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "e2836156c7af7fc1065f1c306a79cc2d",
+            "id": "83cad419938dc3ecfc614020ccc0649a",
             "name": "Get Admin Accounts",
             "url": "httpsg.codefresh.io\/api\/admin\/accounts\/{id}",
             "description": "Get admin accounts.",
@@ -645,11 +645,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "512be025d08ebeb86549dbfc196119ce",
+            "id": "63e1a1d788f10035bd833a58ac2e1d9f",
             "name": "Delete Admin Accounts",
             "url": "httpsg.codefresh.io\/api\/admin\/accounts\/{id}",
             "description": "Delete admin accounts.",
@@ -668,11 +668,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "411a2a8d89ce59472910482ceaadc422",
+            "id": "ecf415a8903693bc2c866757525d82f1",
             "name": "Post Admin Accounts Update",
             "url": "httpsg.codefresh.io\/api\/admin\/accounts\/{id}\/update",
             "description": "Post admin accounts update.",
@@ -699,11 +699,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "c4b87e45d745bc941f3469c989badc59",
+            "id": "89e7dfab18415ba2357ea4560e7fb464",
             "name": "Post Admin Accounts Addpendinguser",
             "url": "httpsg.codefresh.io\/api\/admin\/accounts\/addpendinguser",
             "description": "Post admin accounts addpendinguser.",
@@ -730,11 +730,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "14b66b366e50408f28c84c3d0d1ceaf2",
+            "id": "d7cc99f6b414ca9ca84c0a22c0694a70",
             "name": "Get Accounts Users",
             "url": "httpsg.codefresh.io\/api\/accounts\/{id}\/users",
             "description": "Get accounts users.",
@@ -753,11 +753,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "f19acf647671b2ae71c3361606227507",
+            "id": "bd2051710196433693cf8acf937158c4",
             "name": "Post Accounts Update",
             "url": "httpsg.codefresh.io\/api\/accounts\/{id}\/update",
             "description": "Post accounts update.",
@@ -784,11 +784,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "005e42faf186de87ee9c5169139bf35d",
+            "id": "4680115b8cad7b01a75b64a7fae0a7de",
             "name": "Post Accounts Adduser",
             "url": "httpsg.codefresh.io\/api\/accounts\/{id}\/adduser",
             "description": "Post accounts adduser.",
@@ -815,11 +815,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "767d9f5cca8daae918e253862c9592a9",
+            "id": "3fdbb9120bd04b9d3d966b661ffc8398",
             "name": "Post Accounts Adduser",
             "url": "httpsg.codefresh.io\/api\/accounts\/{accountId}\/{userId}\/adduser",
             "description": "Post accounts adduser.",
@@ -853,11 +853,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "bcd7b6fb2df239b206d8f225c375890c",
+            "id": "ede24efef907844023524519936a83e3",
             "name": "Delete Accounts",
             "url": "httpsg.codefresh.io\/api\/accounts\/{accountId}\/{userId}",
             "description": "Delete accounts.",
@@ -891,11 +891,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "3b364e61f8c979cb1924e4e069b81fc3",
+            "id": "28d6f2744ad08a1dceafe9318972adeb",
             "name": "Post Accounts Updateuser",
             "url": "httpsg.codefresh.io\/api\/accounts\/{id}\/updateuser",
             "description": "Post accounts updateuser.",
@@ -922,11 +922,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "4623f5d42b98c133205395a6c946dadb",
+            "id": "11df2ab53fa2fd915adbac26933c6d01",
             "name": "Post Accounts Admin",
             "url": "httpsg.codefresh.io\/api\/accounts\/{accountId}\/{userId}\/admin",
             "description": "Post accounts admin.",
@@ -960,11 +960,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "c20f9265fbcf6abc3ad80aad12bb3fc0",
+            "id": "6146699eca84d4f1159712925f2a36b4",
             "name": "Delete Accounts Admin",
             "url": "httpsg.codefresh.io\/api\/accounts\/{accountId}\/{userId}\/admin",
             "description": "Delete accounts admin.",
@@ -998,11 +998,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "3bf40d7307948b04ea339b4e772aac91",
+            "id": "fc1bc85c1adb0bd74a0a5cfd187e86e8",
             "name": "Post Provers Github Hook",
             "url": "httpsg.codefresh.io\/api\/providers\/github\/hook",
             "description": "Post provers github hook.",
@@ -1078,11 +1078,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "eaeb4b67edf818e77d3a3b571174ee16",
+            "id": "4bea3fa3374786524827b56bc88d9ce7",
             "name": "Get Builds Buildid",
             "url": "httpsg.codefresh.io\/api\/builds\/{buildId}",
             "description": "Get builds buildid.",
@@ -1101,11 +1101,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "6fdf194c96bcfb19c00a420c13e3775d",
+            "id": "e6b0620146109b5b76015b4875b02770",
             "name": "Post Builds Serviceid",
             "url": "httpsg.codefresh.io\/api\/builds\/{serviceId}",
             "description": "Post builds serviceid.",
@@ -1132,11 +1132,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "e280eac974e649885cee95a07851ab31",
+            "id": "f7b7ef3f71185836d05a71fa6c261e4a",
             "name": "Post Builds Buildid Update",
             "url": "httpsg.codefresh.io\/api\/builds\/{buildId}\/update",
             "description": "Post builds buildid update.",
@@ -1163,11 +1163,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "fb53141fc4440d971a98d6980cf5ebff",
+            "id": "e2089b0cfa3335952399acd6f735c428",
             "name": "Get Builds",
             "url": "httpsg.codefresh.io\/api\/builds",
             "description": "Get builds.",
@@ -1208,11 +1208,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "3b96195301034d4361d16b6f1c01997f",
+            "id": "0811be2dcdf15d1e6a4753b38308828e",
             "name": "Get Environments",
             "url": "httpsg.codefresh.io\/api\/environments",
             "description": "Get environments.",
@@ -1231,11 +1231,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "16eaa2864e03ddbed28c946719677c1d",
+            "id": "77ccf963c3c5545ba30ab9a97af791d9",
             "name": "Get Environments Status",
             "url": "httpsg.codefresh.io\/api\/environments\/{id}\/status",
             "description": "Get environments status.",
@@ -1254,11 +1254,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "602adcc5246913b30179f4619a675219",
+            "id": "3977420a7f1847a6c2a538e43b8a54b9",
             "name": "Get Environments Stop",
             "url": "httpsg.codefresh.io\/api\/environments\/{id}\/stop",
             "description": "Get environments stop.",
@@ -1277,11 +1277,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "2cfc4ca12bf754ab62ca64498e7432fb",
+            "id": "652f45d2614c566aa2dbc837736e6dde",
             "name": "Get Environments Start",
             "url": "httpsg.codefresh.io\/api\/environments\/{id}\/start",
             "description": "Get environments start.",
@@ -1300,11 +1300,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "aee435e9237a23f925b416a6405b6a6c",
+            "id": "6e99bab7da85475aaf87dddaabf4334f",
             "name": "Get Environments Pause",
             "url": "httpsg.codefresh.io\/api\/environments\/{id}\/pause",
             "description": "Get environments pause.",
@@ -1323,11 +1323,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "33cb5e80f91e61bbb3ef3d9a90da86ea",
+            "id": "2a2e8e9062adc04c1048665078ea05f9",
             "name": "Get Environments Unpause",
             "url": "httpsg.codefresh.io\/api\/environments\/{id}\/unpause",
             "description": "Get environments unpause.",
@@ -1346,11 +1346,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "50e3b3046e0b2cf153bbf804fe5557fc",
+            "id": "a7e0b6dcf01df7954cacf100152d9298",
             "name": "Get Environments Terminate",
             "url": "httpsg.codefresh.io\/api\/environments\/{id}\/terminate",
             "description": "Get environments terminate.",
@@ -1369,11 +1369,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "8cf912d82715b8d393ded4f4de69bdf8",
+            "id": "f9507f161a76be34a808dd3561e38c8f",
             "name": "Get Environments All Terminate",
             "url": "httpsg.codefresh.io\/api\/environments\/all\/terminate",
             "description": "Get environments all terminate.",
@@ -1392,11 +1392,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "fdc9cfa7fd532e3d8be614c6672dba0e",
+            "id": "222c35885f6919c429b4d336467271ab",
             "name": "Get Environments Rename Newname",
             "url": "httpsg.codefresh.io\/api\/environments\/{id}\/rename\/{newName}",
             "description": "Get environments rename newname.",
@@ -1430,11 +1430,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "d580ae430f1220e3dc44584274efea3c",
+            "id": "b45773158975c8f1a9061e49e29b488f",
             "name": "Get Payments Plans",
             "url": "httpsg.codefresh.io\/api\/payments\/plans",
             "description": "Get payments plans.",
@@ -1453,11 +1453,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "c2832a8dd22978e62e219df2b9d9b093",
+            "id": "a891a19b7891e47d7ce91f2b331d22c1",
             "name": "Get Payments",
             "url": "httpsg.codefresh.io\/api\/payments",
             "description": "Get payments.",
@@ -1476,11 +1476,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "5a432fb51c5499c4508b951f6f36ce05",
+            "id": "956645c9055661a9b658f605becda62e",
             "name": "Post Payments",
             "url": "httpsg.codefresh.io\/api\/payments",
             "description": "Post payments.",
@@ -1507,11 +1507,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "6b5715a6069de9dad7e10cf0da2996a4",
+            "id": "c416cf413af88353ff14b0163aee29e4",
             "name": "Get Compositions",
             "url": "httpsg.codefresh.io\/api\/compositions",
             "description": "Get compositions.",
@@ -1530,11 +1530,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "bbef9b2e40fb543e1110e44c16ba511c",
+            "id": "738a91d17b4015f949aea361ae87cbd8",
             "name": "Post Compositions",
             "url": "httpsg.codefresh.io\/api\/compositions",
             "description": "Post compositions.",
@@ -1561,11 +1561,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "0bba6e9f6df5ff8325cd8c3437f18c53",
+            "id": "624922b017441cab27373a8510685281",
             "name": "Get Compositions Entifier",
             "url": "httpsg.codefresh.io\/api\/compositions\/{identifier}",
             "description": "Get compositions entifier.",
@@ -1592,11 +1592,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "b152ab5ab505bb2e2c324e3535870d82",
+            "id": "5f3c71e46d4fc8fe40a529d7398e9a7b",
             "name": "Post Compositions Duplicate",
             "url": "httpsg.codefresh.io\/api\/compositions\/{id}\/duplicate",
             "description": "Post compositions duplicate.",
@@ -1615,11 +1615,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "6a0ee4106dc1d90383e3599735e417bf",
+            "id": "2627f234f465e41db0d0c24901e112f5",
             "name": "Put Compositions",
             "url": "httpsg.codefresh.io\/api\/compositions\/{id}",
             "description": "Put compositions.",
@@ -1646,11 +1646,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "3ff757ed04df1b68af9a3e746c79612b",
+            "id": "2848ea897376e8840b40293a31141bcd",
             "name": "Delete Compositions",
             "url": "httpsg.codefresh.io\/api\/compositions\/{id}",
             "description": "Delete compositions.",
@@ -1669,11 +1669,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "ad74a11dfd63b6c223a8849615588d53",
+            "id": "b84ce0d6885dc525e86673e96db0cf93",
             "name": "Post Compositions Entifier Run",
             "url": "httpsg.codefresh.io\/api\/compositions\/{identifier}\/run",
             "description": "Post compositions entifier run.",
@@ -1707,11 +1707,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "78374ab2c2ea22dae2ea4d1111f0f84c",
+            "id": "83ec0b97a33ea68533dfb709bbeb5aa7",
             "name": "Post Workflow Repoowner Reponame File",
             "url": "httpsg.codefresh.io\/api\/workflow\/{repoOwner}\/{repoName}\/file",
             "description": "Post workflow repoowner reponame file.",
@@ -1752,11 +1752,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "6995b8db57452f9e4b8b7cdd06aa6bb3",
+            "id": "6fca742c902ad2adf1eb7f788add0fd8",
             "name": "Get Workflow",
             "url": "httpsg.codefresh.io\/api\/workflow",
             "description": "Get workflow.",
@@ -1783,11 +1783,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "f3359eb4be0c0718840013c2a429e99a",
+            "id": "00e296e685317261d12e0155160c605b",
             "name": "Get Features Accountid",
             "url": "httpsg.codefresh.io\/api\/features\/{accountId}",
             "description": "Get features accountid.",
@@ -1814,11 +1814,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         },
         {
-            "id": "1b91100e9a35664fe481a61bbbe64b27",
+            "id": "85614ddd605e524d4abb940cd3b1efca",
             "name": "Post Registry Auth Token",
             "url": "httpsg.codefresh.io\/api\/registry\/auth\/token",
             "description": "Post registry auth token.",
@@ -1845,7 +1845,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "213531ee18776296c411dfb955e6df56",
+            "collectionId": "e7132d237ac7e3d98657cc310ffb90f6",
             "rawModeData": ""
         }
     ]
