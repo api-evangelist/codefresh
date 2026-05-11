@@ -1,0 +1,63 @@
+aid: codefresh
+name: Codefresh
+description: >-
+  Codefresh is an Argo-based CI/CD platform that enables engineering teams
+  to build, test, and deploy applications using GitOps workflows powered
+  by Argo Workflows, Argo CD, Argo Events, and Argo Rollouts. The platform
+  provides pipelines, environments, runtime management, and progressive
+  delivery for Kubernetes-native software delivery. The Codefresh REST API
+  offers programmatic access to pipelines, builds, clusters, environments,
+  and repositories, authenticated via API key tokens with granular scopes.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - CI/CD
+  - Continuous Delivery
+  - GitOps
+  - Argo
+  - Kubernetes
+  - DevOps
+  - Pipelines
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/codefresh/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: codefresh:rest-api
+    name: Codefresh REST API
+    description: >-
+      REST API for managing Codefresh pipelines, builds, clusters,
+      environments, repositories, and audit data. Authentication uses
+      API key tokens passed via the Authorization header, with granular
+      scopes including Build, Pipeline, Cluster, Audit, Repos, Environments,
+      and Agent permissions.
+    humanURL: https://g.codefresh.io/api/
+    baseURL: https://g.codefresh.io/api
+    tags:
+      - CI/CD
+      - GitOps
+      - Pipelines
+      - Builds
+      - Argo
+    properties:
+      - type: Documentation
+        url: https://codefresh.io/docs/docs/integrations/codefresh-api/
+      - type: API Browser
+        url: https://g.codefresh.io/api/
+      - type: CLI
+        url: https://codefresh-io.github.io/cli/
+      - type: Terraform Provider
+        url: https://registry.terraform.io/providers/codefresh-io/codefresh/latest
+common:
+  - type: Website
+    url: https://codefresh.io
+  - type: Documentation
+    url: https://codefresh.io/docs/
+  - type: Pricing
+    url: https://codefresh.io/pricing/
+  - type: Sign Up
+    url: https://g.codefresh.io/signup
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
