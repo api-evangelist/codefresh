@@ -56,7 +56,7 @@ common:
     url: https://codefresh.io/docs/
   - type: Pricing
     url: https://codefresh.io/pricing/
-  - type: Sign Up
+  - type: SignUp
     url: https://g.codefresh.io/signup
 maintainers:
   - FN: Kin Lane
