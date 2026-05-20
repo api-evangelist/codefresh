@@ -50,6 +50,10 @@ apis:
       - type: Terraform Provider
         url: https://registry.terraform.io/providers/codefresh-io/codefresh/latest
 common:
+  - type: GitHubOrganization
+    url: https://github.com/codefresh-io
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/codefresh
   - type: Website
     url: https://codefresh.io
   - type: Documentation
