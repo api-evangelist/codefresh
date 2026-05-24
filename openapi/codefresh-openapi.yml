@@ -1,0 +1,387 @@
+openapi: 3.1.0
+info:
+  title: Codefresh REST API
+  description: |
+    REST API for managing Codefresh pipelines, builds, clusters, environments,
+    contexts, Helm charts, and access control. Authenticated via API key tokens
+    with granular scopes. This best-effort OpenAPI was generated from the
+    public Codefresh openapi.json published with the codefresh-io/cli project
+    and the docs at https://codefresh.io/docs/docs/integrations/codefresh-api/
+    and does not cover every endpoint, parameter, or schema.
+  version: "1.0.0"
+  contact:
+    name: Codefresh
+    url: https://codefresh.io
+servers:
+  - url: https://g.codefresh.io/api
+    description: Codefresh SaaS API
+security:
+  - ApiKeyAuth: []
+tags:
+  - name: Audit
+  - name: Access Control
+  - name: Accounts
+  - name: Admin
+  - name: Annotations
+  - name: Auth
+  - name: Builds
+  - name: Workflows
+  - name: Clusters
+  - name: Contexts
+  - name: Environments
+  - name: Features
+  - name: Helm
+paths:
+  /audit/download:
+    get:
+      tags: [Audit]
+      summary: Download audit logs
+      operationId: downloadAudit
+      parameters:
+        - in: query
+          name: from
+          schema: { type: string, format: date-time }
+        - in: query
+          name: to
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: Audit log file
+  /abac:
+    get:
+      tags: [Access Control]
+      summary: List ABAC rules
+      operationId: listAbacRules
+      responses:
+        '200':
+          description: List of rules
+    post:
+      tags: [Access Control]
+      summary: Create an ABAC rule
+      operationId: createAbacRule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Rule created
+  /abac/batch:
+    post:
+      tags: [Access Control]
+      summary: Batch create or delete ABAC rules
+      operationId: batchAbacRules
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action: { type: string, enum: [create, delete] }
+                rules:
+                  type: array
+                  items: { type: object }
+      responses:
+        '200':
+          description: Batch result
+  /abac/resource/{resource}:
+    parameters:
+      - in: path
+        name: resource
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Access Control]
+      summary: List rules for a resource
+      operationId: getAbacByResource
+      responses:
+        '200':
+          description: Rules
+  /abac/tags/rule/{rule}:
+    parameters:
+      - in: path
+        name: rule
+        required: true
+        schema: { type: string }
+    post:
+      tags: [Access Control]
+      summary: Update tags on an ABAC rule
+      operationId: updateAbacRuleTags
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tags:
+                  type: array
+                  items: { type: string }
+      responses:
+        '200':
+          description: Updated
+  /accounts/{id}/users:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Accounts]
+      summary: List users on an account
+      operationId: listAccountUsers
+      responses:
+        '200':
+          description: Users
+    post:
+      tags: [Accounts]
+      summary: Add a user to an account
+      operationId: addAccountUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: User added
+  /admin/accounts:
+    get:
+      tags: [Admin]
+      summary: List accounts (admin)
+      operationId: listAdminAccounts
+      responses:
+        '200':
+          description: Accounts
+    post:
+      tags: [Admin]
+      summary: Create an account (admin)
+      operationId: createAdminAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Created
+  /admin/accounts/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Admin]
+      summary: Retrieve an account (admin)
+      operationId: getAdminAccount
+      responses:
+        '200':
+          description: Account
+  /annotations:
+    get:
+      tags: [Annotations]
+      summary: List annotations
+      operationId: listAnnotations
+      responses:
+        '200':
+          description: Annotations
+    post:
+      tags: [Annotations]
+      summary: Create an annotation
+      operationId: createAnnotation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Created
+  /auth/key:
+    post:
+      tags: [Auth]
+      summary: Generate an API key
+      operationId: createAuthKey
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                subject: { type: object }
+                scopes:
+                  type: array
+                  items: { type: string }
+      responses:
+        '200':
+          description: Key created
+  /auth/keys:
+    get:
+      tags: [Auth]
+      summary: List API keys
+      operationId: listAuthKeys
+      responses:
+        '200':
+          description: Keys
+  /builds/{serviceId}:
+    parameters:
+      - in: path
+        name: serviceId
+        required: true
+        schema: { type: string }
+    post:
+      tags: [Builds]
+      summary: Trigger a pipeline build
+      operationId: triggerBuild
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                serviceId: { type: string }
+                type: { type: string, default: build }
+                repoOwner: { type: string }
+                repoName: { type: string }
+                branch: { type: string }
+                variables:
+                  type: object
+                  additionalProperties: { type: string }
+      responses:
+        '200':
+          description: Build triggered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  buildId: { type: string }
+  /builds/{buildId}:
+    parameters:
+      - in: path
+        name: buildId
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Builds]
+      summary: Get build status
+      operationId: getBuild
+      responses:
+        '200':
+          description: Build info
+  /workflow:
+    get:
+      tags: [Workflows]
+      summary: List workflows
+      operationId: listWorkflows
+      parameters:
+        - in: query
+          name: limit
+          schema: { type: integer }
+        - in: query
+          name: page
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Workflows
+  /clusters:
+    get:
+      tags: [Clusters]
+      summary: List Kubernetes clusters
+      operationId: listClusters
+      responses:
+        '200':
+          description: Clusters
+  /contexts:
+    get:
+      tags: [Contexts]
+      summary: List integration contexts
+      operationId: listContexts
+      responses:
+        '200':
+          description: Contexts
+    post:
+      tags: [Contexts]
+      summary: Create an integration context
+      operationId: createContext
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Created
+  /environments:
+    get:
+      tags: [Environments]
+      summary: List environments
+      operationId: listEnvironments
+      responses:
+        '200':
+          description: Environments
+  /features/{accountId}:
+    parameters:
+      - in: path
+        name: accountId
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Features]
+      summary: Get account feature flags
+      operationId: getFeatures
+      responses:
+        '200':
+          description: Features
+  /helm/boards:
+    get:
+      tags: [Helm]
+      summary: List Helm release boards
+      operationId: listHelmBoards
+      responses:
+        '200':
+          description: Boards
+    post:
+      tags: [Helm]
+      summary: Create a Helm release board
+      operationId: createHelmBoard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Created
+  /helm/charts:
+    get:
+      tags: [Helm]
+      summary: List Helm charts
+      operationId: listHelmCharts
+      responses:
+        '200':
+          description: Charts
+    post:
+      tags: [Helm]
+      summary: Create a Helm chart deployment
+      operationId: createHelmChart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        '200':
+          description: Created
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Codefresh API key. Send raw token as Authorization header value.
