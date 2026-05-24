@@ -62,6 +62,8 @@ common:
     url: https://codefresh.io/pricing/
   - type: SignUp
     url: https://g.codefresh.io/signup
+  - type: LLMsTxt
+    url: https://codefresh.io/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
