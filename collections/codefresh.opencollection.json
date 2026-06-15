@@ -1,0 +1,543 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Codefresh REST API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Audit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Download audit logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/audit/download",
+            "params": [
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Download audit logs"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Access Control",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List ABAC rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/abac"
+          },
+          "docs": "List ABAC rules"
+        },
+        {
+          "info": {
+            "name": "Create an ABAC rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/abac",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an ABAC rule"
+        },
+        {
+          "info": {
+            "name": "Batch create or delete ABAC rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/abac/batch",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Batch create or delete ABAC rules"
+        },
+        {
+          "info": {
+            "name": "List rules for a resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/abac/resource/:resource",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List rules for a resource"
+        },
+        {
+          "info": {
+            "name": "Update tags on an ABAC rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/abac/tags/rule/:rule",
+            "params": [
+              {
+                "name": "rule",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update tags on an ABAC rule"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users on an account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/accounts/:id/users",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List users on an account"
+        },
+        {
+          "info": {
+            "name": "Add a user to an account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/accounts/:id/users",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a user to an account"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Admin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List accounts (admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/admin/accounts"
+          },
+          "docs": "List accounts (admin)"
+        },
+        {
+          "info": {
+            "name": "Create an account (admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/admin/accounts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an account (admin)"
+        },
+        {
+          "info": {
+            "name": "Retrieve an account (admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/admin/accounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an account (admin)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Annotations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List annotations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/annotations"
+          },
+          "docs": "List annotations"
+        },
+        {
+          "info": {
+            "name": "Create an annotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/annotations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an annotation"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate an API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/auth/key",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate an API key"
+        },
+        {
+          "info": {
+            "name": "List API keys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/auth/keys"
+          },
+          "docs": "List API keys"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Builds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Trigger a pipeline build",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/builds/:serviceId",
+            "params": [
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trigger a pipeline build"
+        },
+        {
+          "info": {
+            "name": "Get build status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/builds/:buildId",
+            "params": [
+              {
+                "name": "buildId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get build status"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Workflows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/workflow",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List workflows"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Clusters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Kubernetes clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/clusters"
+          },
+          "docs": "List Kubernetes clusters"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contexts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List integration contexts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/contexts"
+          },
+          "docs": "List integration contexts"
+        },
+        {
+          "info": {
+            "name": "Create an integration context",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/contexts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an integration context"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Environments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List environments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/environments"
+          },
+          "docs": "List environments"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Features",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get account feature flags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/features/:accountId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get account feature flags"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Helm",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Helm release boards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/helm/boards"
+          },
+          "docs": "List Helm release boards"
+        },
+        {
+          "info": {
+            "name": "Create a Helm release board",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/helm/boards",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Helm release board"
+        },
+        {
+          "info": {
+            "name": "List Helm charts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/helm/charts"
+          },
+          "docs": "List Helm charts"
+        },
+        {
+          "info": {
+            "name": "Create a Helm chart deployment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/helm/charts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Helm chart deployment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
