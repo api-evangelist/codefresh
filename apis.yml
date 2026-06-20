@@ -9,7 +9,7 @@ description: >-
   offers programmatic access to pipelines, builds, clusters, environments,
   and repositories, authenticated via API key tokens with granular scopes.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - CI/CD
   - Continuous Delivery
