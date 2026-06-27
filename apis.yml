@@ -60,9 +60,9 @@ common:
     url: https://codefresh.io/docs/
   - type: Pricing
     url: https://codefresh.io/pricing/
-  - type: SignUp
+  - type: Signup
     url: https://g.codefresh.io/signup
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://codefresh.io/llms.txt
 maintainers:
   - FN: Kin Lane
