@@ -50,6 +50,10 @@ apis:
       - type: Terraform Provider
         url: https://registry.terraform.io/providers/codefresh-io/codefresh/latest
 common:
+  - type: DomainSecurity
+    url: security/codefresh-domain-security.yml
+  - type: Authentication
+    url: authentication/codefresh-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/codefresh-io
   - type: LinkedIn
@@ -64,6 +68,8 @@ common:
     url: https://g.codefresh.io/signup
   - type: LlmsText
     url: https://codefresh.io/llms.txt
+  - url: https://codefresh.io/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

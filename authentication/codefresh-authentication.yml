@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/codefresh-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: Codefresh API key. Send raw token as Authorization header value.
+  sources:
+  - openapi/codefresh-openapi.yml
