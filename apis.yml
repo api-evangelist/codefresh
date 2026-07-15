@@ -50,6 +50,8 @@ apis:
       - type: Terraform Provider
         url: https://registry.terraform.io/providers/codefresh-io/codefresh/latest
 common:
+  - type: AgenticAccess
+    url: agentic-access/codefresh-agentic-access.yml
   - type: DomainSecurity
     url: security/codefresh-domain-security.yml
   - type: Authentication
