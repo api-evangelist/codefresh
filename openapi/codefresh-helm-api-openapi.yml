@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Codefresh REST Access Control Helm API
+  description: 'REST API for managing Codefresh pipelines, builds, clusters, environments,
+
+    contexts, Helm charts, and access control. Authenticated via API key tokens
+
+    with granular scopes. This best-effort OpenAPI was generated from the
+
+    public Codefresh openapi.json published with the codefresh-io/cli project
+
+    and the docs at https://codefresh.io/docs/docs/integrations/codefresh-api/
+
+    and does not cover every endpoint, parameter, or schema.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Codefresh
+    url: https://codefresh.io
+servers:
+- url: https://g.codefresh.io/api
+  description: Codefresh SaaS API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Helm
+paths:
+  /helm/boards:
+    get:
+      tags:
+      - Helm
+      summary: List Helm release boards
+      operationId: listHelmBoards
+      responses:
+        '200':
+          description: Boards
+    post:
+      tags:
+      - Helm
+      summary: Create a Helm release board
+      operationId: createHelmBoard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Created
+  /helm/charts:
+    get:
+      tags:
+      - Helm
+      summary: List Helm charts
+      operationId: listHelmCharts
+      responses:
+        '200':
+          description: Charts
+    post:
+      tags:
+      - Helm
+      summary: Create a Helm chart deployment
+      operationId: createHelmChart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Created
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Codefresh API key. Send raw token as Authorization header value.

@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: Codefresh REST Access Control Workflows API
+  description: 'REST API for managing Codefresh pipelines, builds, clusters, environments,
+
+    contexts, Helm charts, and access control. Authenticated via API key tokens
+
+    with granular scopes. This best-effort OpenAPI was generated from the
+
+    public Codefresh openapi.json published with the codefresh-io/cli project
+
+    and the docs at https://codefresh.io/docs/docs/integrations/codefresh-api/
+
+    and does not cover every endpoint, parameter, or schema.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Codefresh
+    url: https://codefresh.io
+servers:
+- url: https://g.codefresh.io/api
+  description: Codefresh SaaS API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Workflows
+paths:
+  /workflow:
+    get:
+      tags:
+      - Workflows
+      summary: List workflows
+      operationId: listWorkflows
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          type: integer
+      - in: query
+        name: page
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Workflows
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Codefresh API key. Send raw token as Authorization header value.

@@ -1,0 +1,94 @@
+openapi: 3.1.0
+info:
+  title: Codefresh REST Access Control Builds API
+  description: 'REST API for managing Codefresh pipelines, builds, clusters, environments,
+
+    contexts, Helm charts, and access control. Authenticated via API key tokens
+
+    with granular scopes. This best-effort OpenAPI was generated from the
+
+    public Codefresh openapi.json published with the codefresh-io/cli project
+
+    and the docs at https://codefresh.io/docs/docs/integrations/codefresh-api/
+
+    and does not cover every endpoint, parameter, or schema.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Codefresh
+    url: https://codefresh.io
+servers:
+- url: https://g.codefresh.io/api
+  description: Codefresh SaaS API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Builds
+paths:
+  /builds/{serviceId}:
+    parameters:
+    - in: path
+      name: serviceId
+      required: true
+      schema:
+        type: string
+    post:
+      tags:
+      - Builds
+      summary: Trigger a pipeline build
+      operationId: triggerBuild
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                serviceId:
+                  type: string
+                type:
+                  type: string
+                  default: build
+                repoOwner:
+                  type: string
+                repoName:
+                  type: string
+                branch:
+                  type: string
+                variables:
+                  type: object
+                  additionalProperties:
+                    type: string
+      responses:
+        '200':
+          description: Build triggered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  buildId:
+                    type: string
+  /builds/{buildId}:
+    parameters:
+    - in: path
+      name: buildId
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Builds
+      summary: Get build status
+      operationId: getBuild
+      responses:
+        '200':
+          description: Build info
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Codefresh API key. Send raw token as Authorization header value.
