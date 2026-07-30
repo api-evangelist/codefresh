@@ -9,7 +9,19 @@ description: >-
   offers programmatic access to pipelines, builds, clusters, environments,
   and repositories, authenticated via API key tokens with granular scopes.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/codefresh.png
 tags:
   - CI/CD
   - Continuous Delivery
@@ -24,31 +36,159 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: codefresh:rest-api
-    name: Codefresh REST API
-    description: >-
-      REST API for managing Codefresh pipelines, builds, clusters,
-      environments, repositories, and audit data. Authentication uses
-      API key tokens passed via the Authorization header, with granular
-      scopes including Build, Pipeline, Cluster, Audit, Repos, Environments,
-      and Agent permissions.
-    humanURL: https://g.codefresh.io/api/
-    baseURL: https://g.codefresh.io/api
-    tags:
-      - CI/CD
-      - GitOps
-      - Pipelines
-      - Builds
-      - Argo
-    properties:
-      - type: Documentation
-        url: https://codefresh.io/docs/docs/integrations/codefresh-api/
-      - type: API Browser
-        url: https://g.codefresh.io/api/
-      - type: CLI
-        url: https://codefresh-io.github.io/cli/
-      - type: Terraform Provider
-        url: https://registry.terraform.io/providers/codefresh-io/codefresh/latest
+- aid: codefresh:rest-api
+  name: Codefresh REST API
+  description: >-
+    REST API for managing Codefresh pipelines, builds, clusters, environments, repositories, and audit
+    data. Authentication uses API key tokens passed via the Authorization header, with granular scopes
+    including Build, Pipeline, Cluster, Audit, Repos, Environments, and Agent permissions.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - CI/CD
+  - GitOps
+  - Pipelines
+  - Builds
+  - Argo
+  properties:
+  - type: Documentation
+    url: https://codefresh.io/docs/docs/integrations/codefresh-api/
+  - type: API Browser
+    url: https://g.codefresh.io/api/
+  - type: CLI
+    url: https://codefresh-io.github.io/cli/
+  - type: Terraform Provider
+    url: https://registry.terraform.io/providers/codefresh-io/codefresh/latest
+- aid: codefresh:codefresh-access-control-api
+  name: Codefresh Access Control API
+  description: The Access Control API from Codefresh — 4 operation(s) for access control.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Access Control
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-access-control-api-openapi.yml
+- aid: codefresh:codefresh-accounts-api
+  name: Codefresh Accounts API
+  description: The Accounts API from Codefresh — 1 operation(s) for accounts.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-accounts-api-openapi.yml
+- aid: codefresh:codefresh-admin-api
+  name: Codefresh Admin API
+  description: The Admin API from Codefresh — 2 operation(s) for admin.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-admin-api-openapi.yml
+- aid: codefresh:codefresh-annotations-api
+  name: Codefresh Annotations API
+  description: The Annotations API from Codefresh — 1 operation(s) for annotations.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Annotations
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-annotations-api-openapi.yml
+- aid: codefresh:codefresh-audit-api
+  name: Codefresh Audit API
+  description: The Audit API from Codefresh — 1 operation(s) for audit.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Audit
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-audit-api-openapi.yml
+- aid: codefresh:codefresh-auth-api
+  name: Codefresh Auth API
+  description: The Auth API from Codefresh — 2 operation(s) for auth.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-auth-api-openapi.yml
+- aid: codefresh:codefresh-builds-api
+  name: Codefresh Builds API
+  description: The Builds API from Codefresh — 2 operation(s) for builds.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Builds
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-builds-api-openapi.yml
+- aid: codefresh:codefresh-clusters-api
+  name: Codefresh Clusters API
+  description: The Clusters API from Codefresh — 1 operation(s) for clusters.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-clusters-api-openapi.yml
+- aid: codefresh:codefresh-contexts-api
+  name: Codefresh Contexts API
+  description: The Contexts API from Codefresh — 1 operation(s) for contexts.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Contexts
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-contexts-api-openapi.yml
+- aid: codefresh:codefresh-environments-api
+  name: Codefresh Environments API
+  description: The Environments API from Codefresh — 1 operation(s) for environments.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Environments
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-environments-api-openapi.yml
+- aid: codefresh:codefresh-features-api
+  name: Codefresh Features API
+  description: The Features API from Codefresh — 1 operation(s) for features.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Features
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-features-api-openapi.yml
+- aid: codefresh:codefresh-helm-api
+  name: Codefresh Helm API
+  description: The Helm API from Codefresh — 2 operation(s) for helm.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Helm
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-helm-api-openapi.yml
+- aid: codefresh:codefresh-workflows-api
+  name: Codefresh Workflows API
+  description: The Workflows API from Codefresh — 1 operation(s) for workflows.
+  humanURL: https://g.codefresh.io/api/
+  baseURL: https://g.codefresh.io/api
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/codefresh-workflows-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/codefresh-agentic-access.yml
