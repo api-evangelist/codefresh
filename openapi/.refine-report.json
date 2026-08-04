@@ -1,0 +1,38 @@
+{
+  "provider": "codefresh",
+  "sources": [
+    "codefresh-access-control-api-openapi.yml",
+    "codefresh-accounts-api-openapi.yml",
+    "codefresh-admin-api-openapi.yml",
+    "codefresh-annotations-api-openapi.yml",
+    "codefresh-audit-api-openapi.yml",
+    "codefresh-auth-api-openapi.yml",
+    "codefresh-builds-api-openapi.yml",
+    "codefresh-clusters-api-openapi.yml",
+    "codefresh-contexts-api-openapi.yml",
+    "codefresh-environments-api-openapi.yml",
+    "codefresh-features-api-openapi.yml",
+    "codefresh-helm-api-openapi.yml",
+    "codefresh-workflows-api-openapi.yml"
+  ],
+  "outputs": [
+    "codefresh-access-control-api-openapi.yml",
+    "codefresh-accounts-api-openapi.yml",
+    "codefresh-admin-api-openapi.yml",
+    "codefresh-annotations-api-openapi.yml",
+    "codefresh-audit-api-openapi.yml",
+    "codefresh-auth-api-openapi.yml",
+    "codefresh-builds-api-openapi.yml",
+    "codefresh-clusters-api-openapi.yml",
+    "codefresh-contexts-api-openapi.yml",
+    "codefresh-environments-api-openapi.yml",
+    "codefresh-features-api-openapi.yml",
+    "codefresh-helm-api-openapi.yml",
+    "codefresh-workflows-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
