@@ -1,0 +1,136 @@
+{
+  "item": [
+    {
+      "id": "4d8b9af8-18d9-41f4-895e-fac412025069",
+      "name": "Audit",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1ea13bae-e555-4486-bf7c-13b7a7fdc163",
+          "name": "Download audit logs",
+          "request": {
+            "name": "Download audit logs",
+            "description": {},
+            "url": {
+              "path": [
+                "audit",
+                "download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "03a040cf-8ac7-4f98-b692-8bd5d0d98fc9",
+              "name": "Audit log file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "audit",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://g.codefresh.io/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f5b497e6-a7e0-4ee3-8d43-a40a0980c2d1",
+    "name": "Codefresh REST Access Control Audit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for managing Codefresh pipelines, builds, clusters, environments,\ncontexts, Helm charts, and access control. Authenticated via API key tokens\nwith granular scopes. This best-effort OpenAPI was generated from the\npublic Codefresh openapi.json published with the codefresh-io/cli project\nand the docs at https://codefresh.io/docs/docs/integrations/codefresh-api/\nand does not cover every endpoint, parameter, or schema.\n\n\nContact Support:\n Name: Codefresh",
+      "type": "text/plain"
+    }
+  }
+}

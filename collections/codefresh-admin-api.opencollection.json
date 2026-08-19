@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Codefresh REST Access Control Admin API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List accounts (admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/admin/accounts"
+          },
+          "docs": "List accounts (admin)"
+        },
+        {
+          "info": {
+            "name": "Create an account (admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/admin/accounts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an account (admin)"
+        },
+        {
+          "info": {
+            "name": "Retrieve an account (admin)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/admin/accounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an account (admin)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Codefresh REST Access Control Helm API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Helm",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Helm release boards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/helm/boards"
+          },
+          "docs": "List Helm release boards"
+        },
+        {
+          "info": {
+            "name": "Create a Helm release board",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/helm/boards",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Helm release board"
+        },
+        {
+          "info": {
+            "name": "List Helm charts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/helm/charts"
+          },
+          "docs": "List Helm charts"
+        },
+        {
+          "info": {
+            "name": "Create a Helm chart deployment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/helm/charts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Helm chart deployment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

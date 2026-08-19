@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Codefresh REST Access Control Builds API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Builds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Trigger a pipeline build",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/builds/:serviceId",
+            "params": [
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trigger a pipeline build"
+        },
+        {
+          "info": {
+            "name": "Get build status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/builds/:buildId",
+            "params": [
+              {
+                "name": "buildId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get build status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

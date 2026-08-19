@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Codefresh REST Access Control Annotations API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Annotations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List annotations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://g.codefresh.io/api/annotations"
+          },
+          "docs": "List annotations"
+        },
+        {
+          "info": {
+            "name": "Create an annotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://g.codefresh.io/api/annotations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an annotation"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
