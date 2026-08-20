@@ -75,6 +75,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -115,6 +117,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -135,6 +139,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Cluster
+  tags_raw:
   - Clusters
   properties:
   - type: OpenAPI
@@ -145,6 +151,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Context
+  tags_raw:
   - Contexts
   properties:
   - type: OpenAPI
