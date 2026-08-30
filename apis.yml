@@ -163,7 +163,7 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
-  - Context
+  - Contexts
   tags_raw:
   - Contexts
   properties:
