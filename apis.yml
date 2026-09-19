@@ -112,6 +112,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Annotation
+  tags_raw:
   - Annotations
   properties:
   - type: OpenAPI
@@ -178,6 +180,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Environment
+  tags_raw:
   - Environments
   properties:
   - type: OpenAPI
