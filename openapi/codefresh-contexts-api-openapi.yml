@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Codefresh REST Access Control Contexts API
+  title: Codefresh REST Contexts API
   description: 'REST API for managing Codefresh pipelines, builds, clusters, environments,
 
     contexts, Helm charts, and access control. Authenticated via API key tokens
@@ -11,9 +11,7 @@ info:
 
     and the docs at https://codefresh.io/docs/docs/integrations/codefresh-api/
 
-    and does not cover every endpoint, parameter, or schema.
-
-    '
+    and does not cover every endpoint, parameter, or schema.'
   version: 1.0.0
   contact:
     name: Codefresh

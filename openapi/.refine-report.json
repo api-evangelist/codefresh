@@ -1,19 +1,7 @@
 {
   "provider": "codefresh",
   "sources": [
-    "codefresh-access-control-api-openapi.yml",
-    "codefresh-accounts-api-openapi.yml",
-    "codefresh-admin-api-openapi.yml",
-    "codefresh-annotations-api-openapi.yml",
-    "codefresh-audit-api-openapi.yml",
-    "codefresh-auth-api-openapi.yml",
-    "codefresh-builds-api-openapi.yml",
-    "codefresh-clusters-api-openapi.yml",
-    "codefresh-contexts-api-openapi.yml",
-    "codefresh-environments-api-openapi.yml",
-    "codefresh-features-api-openapi.yml",
-    "codefresh-helm-api-openapi.yml",
-    "codefresh-workflows-api-openapi.yml"
+    "_original/codefresh-openapi.yml"
   ],
   "outputs": [
     "codefresh-access-control-api-openapi.yml",
@@ -33,6 +21,24 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "codefresh-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "codefresh-access-control-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-admin-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-annotations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-audit-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-builds-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-clusters-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-contexts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-environments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-features-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-helm-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "codefresh-workflows-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
