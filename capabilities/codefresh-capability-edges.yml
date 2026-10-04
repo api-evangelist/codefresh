@@ -1,0 +1,43 @@
+slug: codefresh
+provider: Codefresh
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Builds
+  spec_file: codefresh-builds-api-openapi.yml
+  capability_id: BC-4210.10
+  capability_id_l1: BC-4210
+  capability_name: Continuous Integration Management
+  confidence: 0.9
+  evidence: POST /builds/{serviceId} — Trigger a pipeline build; GET /builds/{buildId} — Get build status
+  reason: Triggering pipeline builds and retrieving build status is precisely continuous integration build-pipeline
+    management on a CI/CD platform.
+- tag: Environments
+  spec_file: codefresh-environments-api-openapi.yml
+  capability_id: BC-4210.20
+  capability_id_l1: BC-4210
+  capability_name: Environment Management
+  confidence: 0.7
+  evidence: GET /environments — List environments
+  reason: Environments on a CI/CD platform are the provisioned deployment/test environments stewarded
+    between build and production, matching Environment Management; only one read operation so confidence
+    is moderate.
+- tag: Helm
+  spec_file: codefresh-helm-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.7
+  evidence: POST /helm/charts — Create a Helm chart deployment; GET /helm/boards — List Helm release boards
+  reason: Helm chart deployments and release boards govern how software changes are delivered to Kubernetes
+    clusters, which is deployment orchestration within release management.

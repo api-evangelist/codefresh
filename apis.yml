@@ -217,6 +217,9 @@ apis:
   - type: OpenAPI
     url: openapi/codefresh-workflows-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/codefresh-capability-edges.yml
+    name: Codefresh Business Capability Map
   - type: AgenticAccess
     url: agentic-access/codefresh-agentic-access.yml
   - type: DomainSecurity
