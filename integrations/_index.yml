@@ -114,7 +114,7 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: codefresh-fivetran
   label: Fivetran
@@ -140,5 +140,5 @@
     - connectors/applications/codefresh
     vendor_link: https://codefresh.io/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
