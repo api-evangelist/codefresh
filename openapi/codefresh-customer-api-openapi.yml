@@ -1,0 +1,4227 @@
+openapi: 3.2.0
+info:
+  contact:
+    name: Codefresh
+    url: https://www.codefresh.io
+  description: Codefresh API openAPI 3.0 specification
+  termsOfService: https://codefresh.io/docs/docs/terms-and-privacy-policy/terms-of-service/
+  title: Codefresh Customer API
+  version: 0.0.2
+  x-logo:
+    url: https://g.codefresh.io/modules/cf.resources/codefresh-api-docs-images/codefresh-logo-api.svg
+    backgroundColor: '#FFFFFF'
+    altText: Codefresh
+servers:
+- url: https://g.codefresh.io/api
+security:
+- API-key: []
+tags:
+- name: Customer
+paths:
+  /idp/customer/{customerId}:
+    post:
+      x-action: createCustomerIdp
+      x-audit:
+        name:
+          path: body.displayName
+          source: req
+        id:
+          path: _id
+          source: res
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+          description: json
+      tags:
+      - Customer
+      operationId: customer-create-idp
+      parameters:
+      - in: path
+        name: customerId
+        schema:
+          type: string
+        description: Customer ID
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-allowed:
+                body:
+                - clientName
+                - clientType
+                - displayName
+                - accounts
+                - customerId
+              type: object
+      summary: Create IDP
+      x-sdk-interface: customer.createIdp
+      x-code-samples:
+      - lang: curl
+        source: "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/idp/customer/${CUSTOMER_ID}\""
+      - lang: node.js
+        source: sdk.customer.createIdp({ customerId }, { ...REQUEST_BODY_OBJ })
+    put:
+      x-action: updateCustomerIdp
+      x-entityId:
+        pathId: body._id
+        pathName: body.displayName
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+          description: json
+      tags:
+      - Customer
+      operationId: customer-update-idp
+      parameters:
+      - in: path
+        name: customerId
+        schema:
+          type: string
+        description: Customer ID
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-allowed:
+                body:
+                - _id
+                - clientName
+                - clientType
+                - displayName
+                - accounts
+                - customerId
+              type: object
+      summary: Update IDP
+      x-sdk-interface: customer.updateIdp
+      x-code-samples:
+      - lang: curl
+        source: "curl  \\\n    -X PUT \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/idp/customer/${CUSTOMER_ID}\""
+      - lang: node.js
+        source: sdk.customer.updateIdp({ customerId }, { ...REQUEST_BODY_OBJ })
+    delete:
+      x-action: deleteCustomerIdp
+      x-entityId: body.id
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+          description: json
+      tags:
+      - Customer
+      operationId: customer-delete-idp
+      parameters:
+      - in: path
+        name: customerId
+        schema:
+          type: string
+        description: Customer ID
+        required: true
+      summary: Delete IDP
+      x-sdk-interface: customer.deleteIdp
+      x-code-samples:
+      - lang: curl
+        source: "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/idp/customer/${CUSTOMER_ID}\""
+      - lang: node.js
+        source: sdk.customer.deleteIdp({ customerId })
+  /idp/customer/{customerId}/addAccounts:
+    post:
+      x-action: addAccountToCustomerIdp
+      x-entityId: body.ssoConfigId
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+          description: json
+      tags:
+      - Customer
+      operationId: customer-add-account-to-idp
+      parameters:
+      - in: path
+        name: customerId
+        schema:
+          type: string
+        description: Customer ID
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      summary: Add account to IDP
+      x-sdk-interface: customer.AddAccountToIdp
+      x-code-samples:
+      - lang: curl
+        source: "curl  \\\n    -X POST \\\n    -H \"Authorization: ${API_KEY}\" \\\n    -H 'Content-Type: application/json; charset=utf-8' \\\n    -d \"${REQUEST_BODY_OBJ}\" \\\n    \"https://g.codefresh.io/api/idp/customer/${CUSTOMER_ID}/addAccounts\""
+      - lang: node.js
+        source: sdk.customer.AddAccountToIdp({ customerId }, { ...REQUEST_BODY_OBJ })
+  /idp/customer/{customerId}/deleteAccounts:
+    delete:
+      x-action: removeAccountFromCustomerIdp
+      x-entityId: body.ssoConfigId
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+          description: json
+      tags:
+      - Customer
+      operationId: customer-remove-account-from-idp
+      parameters:
+      - in: path
+        name: customerId
+        schema:
+          type: string
+        description: Customer ID
+        required: true
+      summary: Remove account from customer idp
+      x-sdk-interface: customer.removeAccountFromIdp
+      x-code-samples:
+      - lang: curl
+        source: "curl  \\\n    -X DELETE \\\n    -H \"Authorization: ${API_KEY}\" \\\n    \"https://g.codefresh.io/api/idp/customer/${CUSTOMER_ID}/deleteAccounts\""
+      - lang: node.js
+        source: sdk.customer.removeAccountFromIdp({ customerId })
+components:
+  securitySchemes:
+    API-key:
+      in: header
+      name: Authorization
+      description: 'An api key got from: User Settings -> API keys -> Generate'
+      type: apiKey
+x-service-name: api-public
+x-base-path: /api
+x-internal-services:
+- pipeline-manager
+- api
+x-endpoint-conditions:
+- weight: 0
+  condition: global.has-general-service-role
+  handlerRegex: (.*)
+- weight: 1
+  condition: global.has-kubernetes-endpoints-service-role
+  handlerRegex: kubernetes\.\w+
+- weight: 2
+  condition: global.has-auth-service-role
+  handlerRegex: api-key\.\w+
+x-tagGroups:
+- name: Pipelines / Builds
+  tags:
+  - Annotations
+  - Builds
+  - Execution Contexts
+  - Images
+  - Pipelines
+  - Progress
+  - Projects
+  - Step-types
+  - Triggers
+  - Triggers Events
+  - Triggers Types
+- name: Kubernetes / Helm
+  tags:
+  - Environments V2
+  - Helm Boards
+  - Helm Charts
+  - Helm Releases
+  - Helm Sections
+  - Kubernetes
+- name: Swarm
+  tags:
+  - Compositions
+  - Environments
+- name: Integrations / Contexts
+  tags:
+  - Clusters
+  - Contexts
+  - Helm Cluster Configs
+  - Helm Repos
+  - Registries
+  - Repos
+- name: Account Management
+  tags:
+  - Abac
+  - Accounts
+  - Agents
+  - Audit
+  - Runtime Environments
+  - Teams
+  - Tokens
+  - Views
+- name: User Properties
+  tags:
+  - favorites
+- name: On-Premise
+  tags:
+  - Features
+  - Runtime Environments (Account)
+  - Runtime Environments (Plan)
+  - Runtime Environments (System)
+  - Runtime Environments.
+- name: Platform Analytics
+  tags:
+  - Platform Analytics
+x-features:
+  privateNodes:
+    name: privateNodes
+    description: Account can add private nodes. need to change the runtime environment and add nodes to account. The minute you change the runtime environment the account stop using the shared machines
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  customKubernetesCluster:
+    name: customKubernetesCluster
+    description: Users in the account will be able to run pipelines from any cluster and namespace.
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelineStepCustomConditions:
+    name: pipelineStepCustomConditions
+    description: Account with this feature will be able toggle pipeline steps on and off
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  teamsManagement:
+    name: teamsManagement
+    description: Enable teams tab under user&teams menu
+    launchDarklySource: false
+    kind: boolean
+    type: pricing
+    default: false
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/invite-your-team-member/
+  abac:
+    name: abac
+    description: Admins can define ABAC (attribute-based access control) rules for resources.
+    launchDarklySource: false
+    kind: boolean
+    type: pricing
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/access-control/#users-and-administrators
+  ssoManagement:
+    name: ssoManagement
+    description: Enable SSO menu under account settings
+    launchDarklySource: false
+    kind: boolean
+    type: pricing
+    default: false
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/single-sign-on/sso-overview/
+  kubeMonitor:
+    name: kubeMonitor
+    description: Kubernetes monitor ( kubernetes page but behind firewall ) new page, it is not used anymore.
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/kubernetes/
+  groupingBuildsByPipelines:
+    name: groupingBuildsByPipelines
+    description: Account with this feature will be able to see filtered builds list by pipelines (last build in each pipeline)
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  downloadlog:
+    name: downloadlog
+    description: Account with this feature will be able to Download Logs from build logs view
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  renameReleasesToEnvironments:
+    name: renameReleasesToEnvironments
+    description: Rename helm releases to environments
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/new-helm/helm-releases-management/#helm-releases-overview
+  timeline:
+    name: timeline
+    description: The Builds page displays the Timeline option with the time graph of the workflow.
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  saml:
+    name: saml
+    description: Displays SAML for SSO in the SSO Management page.
+    launchDarklySource: true
+    kind: boolean
+    type: pricing
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/single-sign-on/saml/
+  newPipelineViewEnabled:
+    name: newPipelineViewEnabled
+    description: This FF enable the new design off pipeline view
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/configure-ci-cd-pipeline/introduction-to-codefresh-pipelines/
+  ldap:
+    name: ldap
+    description: When enabled, displays LDAP for SSO in the SSO Management page.
+    launchDarklySource: false
+    kind: boolean
+    type: pricing
+    default: false
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/single-sign-on/ldap/
+  OfflineLogging:
+    name: OfflineLogging
+    description: Offline logging
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hideRepositoriesFeature:
+    name: hideRepositoriesFeature
+    description: Hide Repositories from SideBar menu
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  newPricing:
+    name: newPricing
+    description: 'Show price plan details '
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  blockDevOpsInsights:
+    name: blockDevOpsInsights
+    description: Hides the Helm Releases, Helm Boards, Kubernetes Services and Environments pages in the UI.
+    launchDarklySource: false
+    kind: boolean
+    type: pricing
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  editorSteps:
+    name: editorSteps
+    description: Predefined steps for workflow
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  reduceQueryOnBuildView:
+    name: reduceQueryOnBuildView
+    description: Reduce query on build view
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  buildsPriority:
+    name: buildsPriority
+    description: When enabled, supports defining priority for builds in Pipeline Settings. When there are builds in Pending status, those with higher priority are executed before those with lower priority.
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelinesCacheEnabled:
+    name: pipelinesCacheEnabled
+    description: Enables caching pipelines docs by request url in redis to avoid queries to the DB
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  workflowsCacheEnabled:
+    name: workflowsCacheEnabled
+    description: Enables caching workflows by request url in redis to avoid queries to the DB
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelineInfoEnable:
+    name: pipelineInfoEnable
+    description: Persist pipeline and project info to workflow
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newAgentEntity:
+    name: newAgentEntity
+    description: Display agent entity on a left sidebar of account settings
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  loggingFilter:
+    name: loggingFilter
+    description: Logging Filter
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  preventPipelineReload:
+    name: preventPipelineReload
+    description: Performance improvement for Pipeline view
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  alcide:
+    name: alcide
+    description: Security for K8s & DevOps‎
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  nestedBuilds:
+    name: nestedBuilds
+    description: New builds list view with nested builds
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  showNestedWorkflows:
+    name: showNestedWorkflows
+    description: New builds list view with nested builds
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  githubActions:
+    name: githubActions
+    description: Ability to run github actions in codefresh
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/github-actions/
+  debugFeature:
+    name: debugFeature
+    description: Allows user to use pipeline debugger.
+    launchDarklySource: false
+    kind: boolean
+    type: pricing
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/configure-ci-cd-pipeline/debugging-pipelines/#entering-the-debugger-mode
+  debugBasic:
+    name: debugBasic
+    description: Supports Basic debug mode with limited list of commands in command line.
+    launchDarklySource: false
+    kind: boolean
+    type: pricing
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  debugUnlimited:
+    name: debugUnlimited
+    description: Supports all commands all commands for debug in command line.
+    launchDarklySource: false
+    kind: boolean
+    type: pricing
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  internalRegistryTags:
+    name: internalRegistryTags
+    description: not used anymore -- all accs are using new images model
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newFirebaseTokenFeature:
+    name: newFirebaseTokenFeature
+    description: When enabled, gets a new Firebase token for every access to a specific build.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  populateWorkflowWithProject:
+    name: populateWorkflowWithProject
+    description: Populate pipeline with project data
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  collapseStages:
+    name: collapseStages
+    description: 'give the ability to collapse stages '
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  runtimeSettingsInRunModal:
+    name: runtimeSettingsInRunModal
+    description: Configure Runtime Environment setting when run pipeline modal
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  removeDoubleSlashInBuildLink:
+    name: removeDoubleSlashInBuildLink
+    description: Removedouble Slash in Build Link
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  launchDarklyManagement:
+    name: launchDarklyManagement
+    description: Use local feature flags or from launchDarkly system
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  favoriteChanges:
+    name: favoriteChanges
+    description: Ability persist one entity in one favorite report, it is mainly for pipeline branch seletion, it is just changing DB query
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  enrichWorkflowWithSCMData:
+    name: enrichWorkflowWithSCMData
+    description: Additional information to workflow
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newEventValidationLogicForGitlab:
+    name: newEventValidationLogicForGitlab
+    description: Enable new event validation logic for gitlab triggers
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  refactoredEventValidationLogic:
+    name: refactoredEventValidationLogic
+    description: Use refactored trigger events validation during handling webhook
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  helmOptimizedQueue:
+    name: helmOptimizedQueue
+    description: Ability to make helm processing faster for some specific customer if needed
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  auditing:
+    name: auditing
+    description: Enable audit tab under account settings
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/audit-logs/
+  scaleSupport:
+    name: scaleSupport
+    description: scale step allows you to quickly create parallel steps that are mostly similar
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/codefresh-yaml/advanced-workflows/#scale-parallel-steps-one-dimension
+  buildsDataRetention:
+    name: buildsDataRetention
+    description: Retention policy for Codefresh builds
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/codefresh-on-prem/#retention-policy-for-codefresh-builds
+  setResourcesRequest:
+    name: setResourcesRequest
+    description: set Resources Request - give an option to overide pack CPU and memory on runtime level
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newImageQuery:
+    name: newImageQuery
+    description: 'Added fields to image entity : isVolumeImage, isTagged, that used for filtering and optimize db query'
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  stepsPage:
+    name: stepsPage
+    description: stepsPage
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  showYamlBuilds:
+    name: showYamlBuilds
+    description: View the yaml of the build
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelinesList:
+    name: pipelinesList
+    description: pipelinesList
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  helmReleasePromotion:
+    name: helmReleasePromotion
+    description: helmReleasePromotion
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/new-helm/helm-environment-promotion/
+  kubernetesIntegration:
+    name: kubernetesIntegration
+    description: kubernetesIntegration
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/kubernetes/
+  onboardingStatusWidget:
+    name: onboardingStatusWidget
+    description: onboardingStatusWidget
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  helmRollbackButton:
+    name: helmRollbackButton
+    description: helmRollbackButton
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  helmMonitorFeature:
+    name: helmMonitorFeature
+    description: helmMonitorFeature
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  provisionDockerMachine:
+    name: provisionDockerMachine
+    description: apply provision docker machine
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  azureDevops:
+    name: azureDevops
+    description: azureDevops
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/git-providers/#azure-devops
+  digitalOcean:
+    name: digitalOcean
+    description: digitalOcean
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  auditInAccountSettings:
+    name: auditInAccountSettings
+    description: auditInAccountSettings
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/audit-logs/
+  parallelBuildView:
+    name: parallelBuildView
+    description: parallelBuildView
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  testReporting:
+    name: testReporting
+    description: testReporting
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/testing/test-reports/
+  newPipelineView:
+    name: newPipelineView
+    description: Codefresh pipelines UI, before it was repositories, also it includes projects view
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/configure-ci-cd-pipeline/introduction-to-codefresh-pipelines/
+  environments:
+    name: environments
+    description: environments
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/codefresh-yaml/deployment-environments/
+  googleCloudStorageFeature:
+    name: googleCloudStorageFeature
+    description: googleCloudStorageFeature
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  zendeskSupport:
+    name: zendeskSupport
+    description: zendeskSupport
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newAnnotationsApi:
+    name: newAnnotationsApi
+    description: newAnnotationsApi
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  servicesLogs:
+    name: servicesLogs
+    description: servicesLogs
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  imagePerRegistry:
+    name: imagePerRegistry
+    description: imagePerRegistry
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelineTriggers:
+    name: pipelineTriggers
+    description: pipelineTriggers
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelineNewSettingsExternalRes:
+    name: pipelineNewSettingsExternalRes
+    description: pipelineNewSettingsExternalRes
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitIntegration:
+    name: gitIntegration
+    description: gitIntegration
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/git-providers/
+  newTriggerBranchFilterFeature:
+    name: newTriggerBranchFilterFeature
+    description: newTriggerBranchFilterFeature
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  showHideFormattingSymbols:
+    name: showHideFormattingSymbols
+    description: showHideFormattingSymbols
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  externalResources:
+    name: externalResources
+    description: In a big organization you might have some reusable scripts or other resources (such as Dockerfiles) that you want to use in multiple pipelines. Instead of fetching them manually in freestyle steps you can simply define them as external resources. When a pipeline runs, Codefresh will fetch them automatically and once the pipeline starts the files/folders will already be available in the paths that you define.
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/#external-resources
+  emailDomainManagement:
+    name: emailDomainManagement
+    description: 'Adds the ability to restrict user invitation by email from a specific domain in the Account Settings >  Users & Teams > Security tab.  '
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  disableMonitorEvents:
+    name: disableMonitorEvents
+    description: 'Ability stop apply traffic from kubernetes view agents '
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  ignoreIDPErrorsInWorkflowUser:
+    name: ignoreIDPErrorsInWorkflowUser
+    description: Ignore get idp from error when picking user for process webhook
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  embeddedStepCredentials:
+    name: embeddedStepCredentials
+    description: Fix for docker push step https://codefresh-io.atlassian.net/browse/SAAS-4902
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  advancedYamlValidation:
+    name: advancedYamlValidation
+    description: 'Enables better pipeline error and warnings validation '
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  welcomeScreen:
+    name: welcome screen
+    description: Can't find any usage
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  multiplePushForBitbucket:
+    name: multiplePushForBitbucket
+    description: Enable multiple resources push (i.e. git push origin master dev tagv2) support for for Bitbucket and Bitbucket server
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  githubPackageMigration:
+    name: githubPackageMigration
+    description: Github npm package changed from deprecated to new one
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  removalOfRegistryStep1:
+    name: removal of registry step 1
+    description: Removal of registry step 1 required changes
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  removalOfCFCR:
+    name: Removal of CFCR
+    description: Exposure of removal of CFCR elements. Will be available only if the account has CFCR enabled (the account was provisioned with CFCR)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  CFCRProvisioning:
+    name: CFCR Provisioning
+    description: When enabled — cfcr registry integration will be added to account on sign up
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  internalRegistryFeature:
+    name: internalRegistryFeature
+    description: Ability to set Internal Registry
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newYamlFromRepoView:
+    name: newYamlFromRepoView
+    description: Refactore yaml from repo view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  secretStore:
+    name: Secret Store
+    description: Enables users to add secrets from remote sources to Codefresh via integrations and use them as variables
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/secret-storage/
+  executeNewImageModelLogic:
+    name: execute new image model logic
+    description: We have changed the way we store and process images when removed cfcr.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  relyOnNewImageModelLogic:
+    name: rely on new image model logic
+    description: Migrate to new images model in database
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  disableOldImageModelLogic:
+    name: disable old image model logic
+    description: Before removal of cfcr we stored tags for images differently and this flag was added for gradual exposure of new image logic
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  kubeConfigUsingStream:
+    name: kubeConfig stream
+    description: For every build uses streaming to create large kubeconfigs with credentials of clusters and write it into the shared volume. The streaming method is useful for accounts with too many clusters that need large kubeconfigs. Otherwise, credentials of all the clusters are written in a single operation, more suited to kubeconfigs with fewer clusters, limited to few kbs.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  helmRepositoriesOnboarding:
+    name: Helm Repositories Onboarding
+    description: This ff open new Helm View
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  dindPodRequestsEqualLimits:
+    name: dind pod requests equal to limits
+    description: When enabled, the dind resources areset on the pod requests as well as the limits.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  kubernetesDefinedNamespaces:
+    name: Kubernetes defined namespaces
+    description: In most cases, you want to allow Codefresh to access all namespaces inside the cluster. This is the most convenient option as it will make the services dashboard (and other GUI dashboards) the central way to manage your clusters. You can also restrict Codefresh only to an specific namespace of your choosing.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/deploy-to-kubernetes/add-kubernetes-cluster/
+  engineHealthChecks:
+    name: Engine health checks
+    description: The engine will perform health checks that will be reported to the api
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  googleGitIntegration:
+    name: Google GIT integration
+    description: When enabled, supports integration with Google Cloud Source Repositories as Git provider.
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  multipleRegistries:
+    name: multipleRegistries
+    description: Allow having multiple registries integrations of the same registry provider and group them by domain on ui and allow having one primary of them (for build and push steps when user does not specify registry explicitly we choose it automatically)
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/working-with-docker-registries/#working-with-multiple-registries-with-the-same-domain
+  deleteAccount:
+    name: Delete account
+    description: Enables ability to Delete account, only when user is Account owner
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  logMasking:
+    name: Log Masking
+    description: When enabled, secrets printed to logs are masked with asterisks (****). The feature targets enterprise customers.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+    docLink: https://codefresh.io/docs/docs/codefresh-yaml/variables/#masking-variables-in-logs
+  minioIntegration:
+    name: Minio Integration
+    description: Min.io cloud storage integration
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/testing/test-reports/#connecting-minio-storage
+  dockerNewIntegration:
+    name: Docker new integration
+    description: Docker new integration
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitCloneSSH:
+    name: gitCloneSSH
+    description: Git integration support ssh for clone step
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  useSecondsInWorkflow:
+    name: useSecondsInWorkflow
+    description: When enabled - uses seconds for CF_BUILD_TIMESTAMP workflow variable. Otherwise - milliseconds. It was created for one customer for backward compatibility.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/codefresh-yaml/variables/#system-provided-variables
+  githubApp:
+    name: Github App
+    description: This FF add ability to use Github App git integration
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/git-providers/#codefresh-github-app
+  servicesBehindFirewall:
+    name: Services page with behindFirewall cluster
+    description: This FF allow services page to work with behindFirewall clusters
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  keycloakSso:
+    name: Keycloak SSO
+    description: Keycloak sso provider support, works only with ssoManagement flag
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  showHybrid:
+    name: Reveal the hybrid pack to users
+    description: This feature was used for the gradual exposure of the new codefresh runner. It controls a few places in the cf-ui
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  environmentsV2Flag:
+    name: Environments V2
+    description: Ability to stop gitops module in menu
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  newHelpCenterFeature:
+    name: newHelpCenterFeature
+    description: Redesign help center
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  argoCdGraphFlag:
+    name: Argo CD Graph
+    description: removed
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelineTemplatesFlag:
+    name: pipelineTemplatesFlag
+    description: Ability configure pipeline as template
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/pipeline-settings/#template-section
+  pipelineEnforcementsFlag:
+    name: pipelineEnforcementsFlag
+    description: Select YAML types available for Workflows on pipelines.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/pipeline-settings/
+  pipelineWhiteListFlag:
+    name: pipelineWhiteListFlag
+    description: Ability add restrictions for which repositories we get the yaml from
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/pipeline-settings/
+  pipelinePvcFlag:
+    name: pipelinePvcFlag
+    description: Ability configure PVC policy for pipeline
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/#policies
+  frontEndCache:
+    name: frontEndCache
+    description: front End Cache for API
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  runPlannerInEngine:
+    name: runPlannerInEngine
+    description: When enabled, for Git repositories behind firewalls, starts processing of the Codefresh YAML only after creating the engine that also runs behind the firewall. This feature flag is required when users want to store the Codefresh pipeline YAMLs in repositories when Git providers are behind firewalls. The engine fetches the YAML from the repo, then runs the planner, and executes the build. For this feature flag to work, the `fetchYamlInEngine` feature flag MUST ALSO BE enabled. When disabled, Codefresh accesses the repo and processes the pipeline YAML before the engine is created.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  relativeComposeVolume:
+    name: relativeComposeVolume
+    description: When enabled, supports mapping relative paths for composition service containers.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  fetchYamlInEngine:
+    name: fetchYamlInEngine
+    description: When enabled, delays fetching the Codefresh YAML form the Git repositories that are behind the firewalls in hybrid environments until the engine is created behind the firewall.For this feature flag to work, the runPlannerInEngine feature flag MUST ALSO BE enabled.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  promoteHelm3:
+    name: promoteHelm3
+    description: Promote Helm 3
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/new-helm/helm-environment-promotion/
+  refactoredConcurrencyLimitsFilter:
+    name: refactoredConcurrencyLimitsFilter
+    description: Enable usage of refactored concurrency limit filter
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  inactive:
+    name: inactive
+    description: When enabled, displays the Security tab for Users & Teams.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/access-control/#security-timeout
+  stringifyWorkflowVars:
+    name: stringifyWorkflowVars
+    description: Install chart and promote chart tasks. Stringify workflowOptions.variables value. The aim is to fix issue when sometimes variables came as a string, sometimes as an object. Make sense to removeand use TRUE case always.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  fixStepExtenderFailFast:
+    name: fixStepExtenderFailFast
+    description: Pass fail fast option to matrix and scale steps only in case if they are exist in step object
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newBuildDesign:
+    name: newBuildDesign
+    description: New builds design
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  pushService:
+    name: pushService
+    description: send event to the web app from the backend using web socket
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitopsIsPaid:
+    name: gitopsIsPaid
+    description: Ability restrict access to gitops page for non paid accounts
+    launchDarklySource: true
+    kind: boolean
+    type: pricing
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  buildIntermediateImages:
+    name: buildIntermediateImages
+    description: builds intermediate images for argocd activity
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  pendingApprovalConcurrencyApplied:
+    name: pendingApprovalConcurrencyApplied
+    description: Not used anymore By default when a build reaches pending-approval state it already has some steps executed but at some point of time it gets paused until manual approval. And in this state it's not included in pipeline concurrency policy, meaning that new and new builds of this pipeline can arrive during we have lots of them in paused state. For some customers it leads to some problem and they require to block new pipeline executions when they have builds in pending-approval state.
+    launchDarklySource: true
+    kind: boolean
+    type: pricing
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: 'https: //codefresh.io/docs/docs/configure-ci-cd-pipeline/pipelines/#policies'
+  showCommitterInsteadAdmin:
+    name: showCommitterInsteadAdmin
+    description: Allows to get Codefresh user name by git provider's user taken from trigger
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  resolveGitlabCommitterUsername:
+    name: resolveGitlabCommitterUsername
+    description: Resolve the Gitlab commit committer to a real account username via the Gitlab users search API instead of using the raw free-text committer name for build attribution (related to the Seats Payment model)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  showUsageTab:
+    name: showUsageTab
+    description: When enabled, displays Usage Credits for Credits Consumption and Runner for the customer in Account Settings > Usage .
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  cloneDefaultBranchInsteadOfMaster:
+    name: cloneDefaultBranchInsteadOfMaster
+    description: This flag was requested as github announced they will be changing their default branch from master to main. We had a bunch of places in the system where if the branch was not specified we would just use master. This flag changed the behavior by actively getting the repository's default branch and using that instead of automatically going with master.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: could not find
+  useLoggedInAdminAudit:
+    name: useLoggedInAdminAudit
+    description: When enabled, creates a record in the audit log when Codefresh admin impersonates the user through the admin panel.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  buildsPointerPagination:
+    name: buildsPointerPagination
+    description: new builds list pointer pagination
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  concurrencyRecommendationFlag:
+    name: concurrencyRecommendationFlag
+    description: Display concurrency usage recommendation on a chart
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  approveAdminRequestToLoginIntoUserAccount:
+    name: approveAdminRequestToLoginIntoAccount
+    description: Adds checkbox to user settings that allow Codefresh admins login as current user
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/user-settings/#enable-access-for-support-personnel
+  platformAnalytics:
+    name: platformAnalytics
+    description: Enable platform analytics charts
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  gitopsDashboard:
+    name: gitopsDashboard
+    description: Enable Gitops dashboard tab
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  browserTitleFlag:
+    name: browserTitleFlag
+    description: Display different browser title on all pages
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  defaultAccountSso:
+    name: defaultAccountSso
+    description: Enables default account SSO that automatically assigns to manually invited users.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  aksSpIntegrationFlag:
+    name: aksSpIntegrationFlag
+    description: When enabled, supports creating AKS and Azure Registry using Azure Service Principals.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/deploy-to-kubernetes/add-kubernetes-cluster/#adding-an-aks-cluster-with-a-service-principal
+  forceRefresh:
+    name: forceRefresh
+    description: a flag that its entire purpose is to be able to turn it on/off to make browsers restart after 3 minutes of the change
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hashicorpVaultFlag:
+    name: hashicorpVaultFlag
+    description: Secret store Hashicorp Vault integration
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/hashicorp-vault/
+  ssoGroupSync:
+    name: ssoGroupSync
+    description: Enables sync by cron job in cf-api
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  prGlobModifiedFiles:
+    name: prGlobModifiedFiles
+    description: Support filter by glob expression in git triggers
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  disableWelcomeScreen:
+    name: disableWelcomeScreen
+    description: When enabled, does not display Welcome page in Classic UI and disables user from entering credentials after sign up. Required mostly for on-premises, especially those using LDAP SSO for which all login info is already configured.
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  welcomeScreenInvitedUsers:
+    name: disableWelcomeScreen
+    description: New welcome screen Invited users
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  atlassianFlag:
+    name: atlassianFlag
+    description: When enabled, supports integration with Jira for GitOps.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/jira/
+  helmDeprecation:
+    name: helmDeprecation
+    description: HELM 2 deprecation
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  deprecateCookie:
+    name: deprecateCookie
+    description: Stop persist cf-access-token inside cookie
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  creditsPricingModelFlag:
+    name: creditsPricingModelFlag
+    description: When enabled (set to True), migrates customer to new pricing model.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitopsProvidersSeparation:
+    name: gitopsProvidersSeparation
+    description: Ability turn on gitops controller view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  gitopsAppOfApps:
+    name: gitopsAppOfApps
+    description: Ability to see application as tree view in gitops module
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  gitopsEnableCurrentState:
+    name: gitopsEnableCurrentState
+    description: Ability to see current state page in gitops module
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  codecovFlag:
+    name: codecovFlag
+    description: Enables codecov integration in the account settings
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/codecov-integration/
+  generalScopeAclEnabled:
+    name: generalScopeAclEnabled
+    description: This is related to our api keys scope. Till some point of time they had an issue that endpoints that do not have any scope related to them where not blocked meaning that if user has an api key with scope to access only pipelines he can also access all the resources that do not have any scope. For this purpose we added 'general' scope that will cover all those resources that do not have their own specific scope. When this FF is enabled requests to those endpoints will be blocked, if token does not have general scope. All tokens are reverse compatible meaning that if it was created before we have added general scope will still have access to those endpoints.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  preventProgressBlinkingFlag:
+    name: preventProgressBlinkingFlag
+    description: Fix bug with blinking progress component after build restart
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  freestyleRegistryContext:
+    name: freestyleRegistryContext
+    description: Advanced property for resolving Docker images when working with multiple registries with the same domain
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/working-with-docker-registries/
+  forbidDecrypt:
+    name: forbidDecrypt
+    description: When enabled, prevents users from decrypting secrets.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  allowUserUpdateBoards:
+    name: allowUserUpdateBoards
+    description: When enabled, allows users users admin rights to update Helm board environments.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+    docLink: https://codefresh.io/docs/docs/new-helm/helm-environment-promotion/#creating-your-own-helm-board
+  calcHelmReleaseCacheLock:
+    name: calcHelmReleaseCacheLock
+    description: It is performance optimization for clusterProvider microservice when account has a lot of connected clusters
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  helmRepositoryBehindFirewall:
+    name: helmRepositoryBehindFirewall
+    description: When enabled, for on-premises installations only, allows retreiving credentials for Helm repository within engine when cluster-providers are behind firewalls.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  azureManagedIdentity:
+    name: azureManagedIdentity
+    description: 'When enabled, supports creating AKS and Azure Registry using management identities. Management identities allow users to create cluster and registries without storing credentials. It was deployed only for onprem (GAP). It requires an additional field for the runtime environment. '
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  executionContext:
+    name: executionContext
+    description: When enabled, use the execution context defined for the pipeline or the default execution context instead of admin user to run the pipeline for webhook calls.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/pipeline-execution-context/
+  executionContextFeature:
+    name: executionContextFeature
+    description: UI Execution Context page in the account settings
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/administration/pipeline-execution-context/
+  serviceAccountFeature:
+    name: serviceAccountFeature
+    description: Display ECR service account input pipeline settings and trigger
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitopsManagerEnabled:
+    name: gitopsManagerEnabled
+    description: It is flag that migrating gitops module from pipeline-manager service to gitops-dashboard-manager
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  gitopsMultipleApps:
+    name: gitopsMultipleApps
+    description: Ability to support multiple apps with same name in gitops module for same argocd integration
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  showBuildsForHelmBoard:
+    name: showBuildsForHelmBoard
+    description: Enables `Builds` tab for ability to see builds related to the helm board
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/new-helm/helm-environment-promotion/#creating-your-own-helm-board
+  redirectFromSuspendedToDefault:
+    name: redirectFromSuspendedToDefault
+    description: If current account is suspended, you is going to be redirected to non suspended done
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  marketplaceRegistry:
+    name: marketplaceRegistry
+    description: Defines the container registry to be used for all public steps and system steps
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  codefreshV2:
+    name: codefreshV2
+    description: Ability to switch to codefresh argo platform from classic one
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: true
+      PROJECT_ONE: true
+    systemFeature: true
+    docLink: https://codefresh.io/product/continuous-delivery/
+  codefreshV2NonAdmins:
+    name: codefreshV2NonAdmins
+    description: Ability to switch to codefresh argo platform from classic one for non admin users
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: true
+      PROJECT_ONE: true
+    systemFeature: true
+    docLink: https://codefresh.io/product/continuous-delivery/
+  useOptimizedRegexp:
+    name: useOptimizedRegexp
+    description: Parse docker image use re2 that prevent denial of service in regexp
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  usePendingApprovalConfirmation:
+    name: usePendingApprovalConfirmation
+    description: Enables confirmation for approve/deny action in the pending approval step. To avoid misclick for this action
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/environment-deployments/#using-approvals-in-a-pipeline
+  sortPipelines:
+    name: sortPipelines
+    description: Enables sorting pipelines in the pipeline list
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  useAbacForHelmReleasesChartValue:
+    name: useAbacForHelmReleasesChartValue
+    description: Adds the ability to create ABAC rules for helm release chart data
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  gitopsGraphToTree:
+    name: gitopsGraphToTree
+    description: Ability solve circular references for application tree in gitops module
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  usersManagementV2:
+    name: usersManagementV2
+    description: New UI for users management that include perfomance improvements and migration to angular 2+
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  themeToggle:
+    name: themeToggle
+    '2.0': true
+    description: Support ability to toggle between dark and light mode in V2
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpRuntimesCompatibility:
+    name: csdpRuntimesCompatibility
+    '2.0': true
+    description: 'Enables to resolve runtimeFeatures field on account level '
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  createPipeline:
+    name: createPipeline
+    '2.0': true
+    description: Add ability to create/edit pipeline from UI in the configuration tab
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  createPipelineArguments:
+    name: createPipelineArguments
+    '2.0': true
+    description: Shows arguments tab in pipeline flow
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/pipelines/create-pipeline/#define-default-values-for-workflow-template-arguments
+  csdpWorkflowTemplates:
+    name: csdpWorkflowTemplates
+    '2.0': true
+    description: Shows workflow templates tab in the menu
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/getting-started/csdp-introduction/#workflow-templates
+  csdpDashboardWidgets:
+    name: csdpDashboardWidgets
+    '2.0': true
+    description: 'Adds 2 widgets into the GitOps home page: Deployments widget and Most active applications widget'
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  csdpReloadOnChunkErrorFeature:
+    name: csdpReloadOnChunkErrorFeature
+    '2.0': true
+    description: Reloads page in case chuck error (after updating app version)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpDoraMetrics:
+    name: csdpDoraMetrics
+    '2.0': true
+    description: Adds DORA metrics link to the GitOps navigation menu and allow access to the DORA metrics page.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpManagedArgo:
+    name: csdpManagedArgo
+    '2.0': true
+    description: When enabled, shows the Home, DORA metrics, Images, Applications, Delivery Pipelines, Workflows, and Workflow Templates widgets.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  applicationDashboard:
+    name: applicationDashboard
+    '2.0': true
+    description: Application Dasboard CSDP
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelinesFullBuildStatistic:
+    name: pipelinesFullBuildStatistic
+    description: 'Updates pipelines page. Extends visible build statuses in column chart (adds: currently running, pending, delayed, pending approval)'
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  favoritePipelines:
+    name: favoritePipelines
+    description: Updates pipelines page. Adds ability to mark pipeline as favorite and adds filter by favorites near search bar
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  multipleAzureSP:
+    name: multipleAzureSP
+    description: When enabled, implements the logic for AKS SP and Azure Registry SP to add clusters and registries using multiple Azure Service Principals for account.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  gitopsShowChildRollouts:
+    name: gitopsShowChildRollouts
+    description: Gitops dashboard. Application shows own rollouts (releases) + children's rollouts
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/ci-cd-guides/gitops-deployments/
+  azureNestedGroupSync:
+    name: azureNestedGroupSync
+    description: Enables ability to sync nested groups for Azure AD.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  abacGitContext:
+    name: abacGitContext
+    description: When enabled, allows users to use ABAC-enabled Git integrations. Account admin can define tags for such integrations and configure rules for them.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/git-providers/#abac-for-git-contexts
+  credsInArgsForHttpChartRepos:
+    name: credsInArgsForHttpChartRepos
+    description: When enabled, adds enviorment variable, CREDENTIALS_IN_ARGUMENTS set true, for HELM install default pipeline. Without this feature flag, the Artifactory Helm repository (configured using HTTP Basic credentials) does not work.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  imageRegexp:
+    name: imageRegexp
+    description: Change regexp that used for find image when attaching annotation, it was introduced due performance issue when account has a lot of annotations
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  datadog:
+    name: datadog
+    description: Datadog integration
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/docs/docs/integrations/datadog/
+  log-throttle:
+    name: log-throttle
+    description: Enables improved log throttling in logs terminal component
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  buildAppProxyUrl:
+    name: buildAppProxyUrl
+    description: Returning appProxy url for builds endpoint
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  useLogsTimestamps:
+    name: useLogsTimestamps
+    description: 'When enabled, prepends the date to every line in the log. '
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: false
+  syncAppUsersFromOnelogin:
+    name: syncAppUsersFromOnelogin
+    description: 'Enables ability to sync users only asssigned to Onelogin application. '
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  filterContextsByABACRules:
+    name: filterContextsByABACRules
+    description: Enables context (git, shared-config, etc.) filtering by user ABAC permissions. The Get contexts request returns only those contexts to which the user has access.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  analyticsPreAggregations:
+    name: analyticsPreAggregations
+    '2.0': true
+    description: Use platform-analytics pre aggregations
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  redirectToCSDP:
+    name: redirectToCSDP
+    '2.0': true
+    description: Redirect to codefresh gitops platform after sign up/in and it works only with codefreshV2 flag
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+    docLink: https://codefresh.io/product/continuous-delivery/
+  showCSDPRuntimeResources:
+    name: showCSDPRuntimeResources
+    '2.0': true
+    description: When turn on, application dashboard will display internal applications, including autopilot, argo-cd, argo-workflows, etc. All applications with labels CODEFRESH_ENTITY_LABEL_KEY set to Component and CODEFRESH_INTERNAL_ENTITY set to true
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  showClassicCodefreshButton:
+    name: showClassicCodefreshButton
+    '2.0': true
+    description: Shows button at the bottom of the sidebar that links to classic codefresh.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: true
+      PROJECT_ONE: false
+    systemFeature: true
+  bitbucketModifiedFilesOnCreatedBranchPush:
+    name: bitbucketModifiedFilesOnNewPushedBranch
+    '2.0': false
+    description: Get modified files for blob expressing when push new branch
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  lateVariableInterpolation:
+    name: lateVariableInterpolation
+    description: 'When enabled, values for variables defined using cf_export in pipeline steps override values previously defined for the same variables. '
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpApplicationCreation:
+    name: csdpApplicationCreation
+    '2.0': true
+    description: adds ability to create application from UI.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/deployment/create-application/
+  oauth2AutomaticRegistration:
+    name: oauth2AutomaticRegistration
+    '2.0': true
+    description: When enabled,  supports adding runtimes or authorizing git personal access tokens using OAuth2.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/administration/oauth-setup/
+  csdpIntegrations:
+    name: csdpIntegrations
+    '2.0': true
+    description: Gives access to Integrations page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/integrations/ci-integrations/
+  csdpAuthentication:
+    name: csdpAuthentication
+    '2.0': true
+    description: Gives access to Git Authentications page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/administration/oauth-setup/
+  csdpAmazonECRIntegration:
+    name: csdpAmazonECRIntegration
+    '2.0': true
+    description: When enabled (set to True), enables Codefresh to track user activity in the GitOps UI.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  showAppCurrentStateGraph:
+    name: showAppCurrentStateGraph
+    '2.0': true
+    description: Gives access to application page / current state / tree view mode
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/whats-new/whats-new/#application-resources-in-tree-view
+  showAppRolloutDetails:
+    name: showAppRolloutDetails
+    '2.0': true
+    description: Gives access to application release rollout details drawer. Accessible by clicking on rollout name from application page - timeline / release / updated services section
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/whats-new/whats-new/?#application-rollout-visualization
+  showAppAnalysisRunsDetails:
+    name: showAppAnalysisRunsDetails
+    '2.0': true
+    description: Gives access to application release analysis run details drawer. Accessible by clicking on analysis run name from application page - timeline / release / updated services section / expanded rollout or rollout details drawer
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/deployment/applications-dashboard/#view-analysis-run
+  useDefaultSvcApplicationClusterMetadata:
+    name: useDefaultSvcApplicationClusterMetadata
+    '2.0': true
+    description: To build correct references beetween apps and appSets we define metadata.cluster = https://kubernetes.default.svc always
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  useCodefreshAuthForManagedRuntime:
+    name: useCodefreshAuthForManagedRuntime
+    '2.0': true
+    description: Use Codefresh authentication mode for managed runtime by default
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/administration/oauth-setup/
+  appSetCreation:
+    name: appSetCreation
+    '2.0': true
+    description: 'Ublocks functionality of application set creation. It will be available as switcher option in app creation page '
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpPostgresAnalytics:
+    name: csdpPostgresAnalytics
+    '2.0': true
+    description: When enabled - gitops analytics retrieve data from postgres instead of bigQuery
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  csdpAppUnexistedRefByCut:
+    name: csdpAppUnexistedRefByCut
+    '2.0': true
+    description: Applied on list view of application dashboard. If for some reason query response not include parent application, we cut their relation and display child application on top level, because in other case it will not be displayed in UI
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: true
+      PROJECT_ONE: true
+    systemFeature: true
+  csdpApplicationSync:
+    name: csdpApplicationSync
+    '2.0': true
+    description: Allow syncing application in Dashboard. When enabled we show a sync button
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpAudit:
+    name: csdpAudit
+    '2.0': true
+    description: Allows to send csdp audit events to classic platform
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  csdpApplicationDetails:
+    name: csdpApplicationDetails
+    '2.0': true
+    description: Enables applications details view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpHideFirstRelease:
+    name: csdpHideFirstRelease
+    '2.0': true
+    description: Hides first release till it doesn't have attached rollout
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpApplicationNewHeader:
+    name: csdpApplicationNewHeader
+    '2.0': true
+    description: New application header with sync status, last sync result. Available on application page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  applicationsDashboardCardsView:
+    name: applicationsDashboardCardsView
+    '2.0': true
+    description: Enables cards view on application dashboard.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/deployment/applications-dashboard/#applications-card-view
+  requiredAvailableStorage:
+    name: requiredAvailableStorage
+    '2.0': false
+    description: Adds slidebar in Classic UI runtime configuration section with ability to set and limit required available storage
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  diskUsageChart:
+    name: diskUsageChart
+    '2.0': false
+    description: Adds disk usage chart in build metrics section
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpApplicationRefresh:
+    name: csdpApplicationRefresh
+    '2.0': true
+    description: Allow refreshing application in Dashboard. When enabled we show a refresh button
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  csdpAppReleaseResourceDiff:
+    name: csdpAppReleaseResourceDiff
+    '2.0': true
+    description: Adds updated resources section in app release. They are grouped by REMOVED, CREATED, UPDATED. By clicking on resource name you get drawer with diff view of current and previous manifest
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/deployment/applications-dashboard/#monitor-updated-resources-by-deployment
+  applicationEventsTab:
+    name: applicationEventsTab
+    '2.0': true
+    description: Adds events tab on application page where all of the application events can be seen.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  csdpRolloutResume:
+    name: csdpRolloutResume
+    '2.0': true
+    description: Adds resume button to infinitely paused rollout. Accessible from application page - timeline / release / updated services section
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/whats-new/whats-new/#click-resume-indefinitely-paused-rollouts
+  rootlessDind:
+    name: rootlessDind
+    '2.0': false
+    description: When enabled, runs the Docker daemon and containers as a non-root user.
+    launchDarklySource: false
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpJiraOauthIntegration:
+    name: csdpJiraOauthIntegration
+    '2.0': true
+    description: Adds ability to add jira oauth integration
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitlabSupportForManagedRuntime:
+    name: gitlabSupportForManagedRuntime
+    '2.0': true
+    description: Adds ability to connect GitLab as git provider for managed runtime (WIP)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/runtime/hosted-runtime/#2-connect-git-provider
+  bitbucketSupportForManagedRuntime:
+    name: bitbucketSupportForManagedRuntime
+    '2.0': true
+    description: Adds ability to connect Bitbucket as git provider for managed runtime
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/runtime/hosted-runtime/#2-connect-git-providerr
+  newRuntimeErrorsDrawer:
+    name: newRuntimeErrorsDrawer
+    '2.0': true
+    description: Enables errors view when errors/warnings are grouped to runtime.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+    docLink: https://codefresh.io/csdp-docs/docs/runtime/monitoring-troubleshooting/#hybrid-troubleshoot-health-and-sync-errors-for-runtimes
+  gitopsRuntimeEnvironmentFlag:
+    name: gitopsRuntimeEnvironmentFlag
+    description: When enabled we have additional select with all Runtime Environments inside Gitops => Add/Edit Application Modal
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  requirePruningLabelToResource:
+    name: requirePruningLabelToResource
+    description: Adds requires pruning state(label) for application resources.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  resourceTreeWithManifest:
+    '2.0': true
+    name: resourceTreeWithManifest
+    description: This FF add the new field to resourceTree app-proxy query with all Manifest in order to get annotations
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  supportSSHCreds:
+    '2.0': true
+    name: supportSSHCreds
+    description: Adds ability to set SSH connection credentials to allow applications and sub modules to connect to a repository over SSH.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  systemFonts:
+    name: systemFonts
+    description: When enabled, the UI will use system fonts instead of custom fonts.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  fullstory:
+    name: fullstory
+    description: Enables Codefresh to track user activity with Fullstory in the UI
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  delightedSurvey:
+    name: delightedSurvey
+    description: Enables showing Delighted CX surveys in the UI.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  restrictedGitSource:
+    name: restrictedGitSource
+    description: Allows a creation of a restricted git source
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  commonSideMenu:
+    name: commonSideMenu
+    description: Shows common menu for Classic Codefresh and GitOps (WIP)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: true
+    systemFeature: true
+  showCompositionsMenuFeature:
+    name: showCompositionsMenuFeature
+    description: Show Compositions in navigation menu
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  hideCompositionsMenuItem:
+    name: hideCompositionsMenuItem
+    description: Hide Compositions menu item
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  gitopsImageReporting:
+    name: gitopsImageReporting
+    description: (Project One) Enables image reporting to gitops image model (CSDP)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: true
+      PROJECT_ONE: true
+    systemFeature: false
+  disableRolloutActionsWithoutRBAC:
+    name: disableRolloutActionsWithoutRBAC
+    description: When enabled, disables controls in the Rollout Player for the account.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelinesUsingArgoWorkflowsEngine:
+    name: pipelinesUsingArgoWorkflowsEngine
+    description: Shows pipelines using argo workflows engine section in pipeline settings
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: true
+    systemFeature: true
+  beamerWidget:
+    name: beamerWidget
+    description: Shows Beamer widget for all platforms (What's new)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitOpsPrimaryView:
+    name: gitOpsPrimaryView
+    description: When enabled shows GitOps as the primary view after login, otherwise shows Classic
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  gitOpsRolloutRollback:
+    name: gitOpsRolloutRollback
+    description: Adds ability to rollback rollout from rollout drawer in app timeline
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  injectClusterListFromPipelineSettings:
+    name: injectClusterListFromPipelineSettings
+    description: Adds ability to add clusters list in the pipeline settings and load it on init phase
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  welcomeScreenProjectOne:
+    name: welcomeScreenProjectOne
+    description: Enables new welcome screen design for Project One
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  abacProject:
+    name: abacProject
+    description: Enables permissions for projects
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  cleanGitLockFiles:
+    name: cleanGitLockFiles
+    description: Will delete all lock files from the .git directory at the beginning of a git-clone step. Also adds fallback that fully clones the repository in case we were unable to use the existing repo
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  projectOneSwitch:
+    name: projectOneSwitch
+    description: Adds ability for account admins to switch account system type
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: true
+    systemFeature: true
+  currentStateGraphExpand:
+    name: currentStateGraphExpand
+    '2.0': true
+    description: Adds ability to expand graph on app current state page.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  multipleHelmRegistryContexts:
+    name: multipleHelmRegistryContexts
+    '2.0': true
+    description: Supports ability to add multiple helm registry contexts - saves helm http basic integration login & password variables with CR_CTX_{CONTEXT_NAME} prefix
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  pipelinesDashboardProjectOne:
+    name: pipelinesDashboardProjectOne
+    description: Enables Pipelines Dashboard for Project One
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: true
+    systemFeature: true
+  commonDashboardProjectOne:
+    name: commonDashboardProjectOne
+    description: Enables Unified Dashboard for Project One
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: true
+    systemFeature: true
+  analyticsClassicBuildsReports:
+    name: analyticsClassicBuildsReports
+    '2.0': false
+    description: Adds ability to get classic build reports.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: true
+    systemFeature: true
+  graphExpand:
+    name: graphExpand
+    '2.0': true
+    description: Adds ability to expand graph.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  showGitOpsHomeDashboardInTheProjectOneMenu:
+    name: showGitOpsHomeDashboardInTheProjectOneMenu
+    description: Shows gitOps home dashboard inside the project one menu only for gitOps users.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: true
+    systemFeature: true
+  workflowAbacByPipeline:
+    name: workflowAbacByPipeline
+    description: Apply pipeline abac rules for workflows list queries and others
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  conditionInvalidStepTermination:
+    name: conditionInvalidStepTermination
+    description: terminate steps with invalid condition, when condition on 'when' command is invalid.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  projectOneSystemTypes:
+    name: projectOneSystemTypes
+    description: Theme configurations depend on systemType & prevSystemType fields
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  cloudBuildsRestrictions:
+    name: cloudBuildsRestrictions
+    description: Enables restrictions in case if cloud builds are not enabled and no runtime environment configured
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  abacV2:
+    name: abacV2
+    description: New ABAC permissions page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  autoCreateProjectsForTeams:
+    name: autoCreateProjectsForTeams
+    description: Enable config and logic to automatically create projects and abac rules when team is created
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  parallelKubectlOperations:
+    name: parallelKubectlOperations
+    description: Enables running multiple kubectl commands in parallel
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  gitOpsIntegrationEdit:
+    name: gitOpsIntegrationEdit
+    description: Adds ability to edit gitOps integration
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  disableActionBtnByAbac:
+    name: disableActionBtnByAbac
+    description: Disable create buttons and others if abac enabled and user don't have permissions for this action
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  showBuildAnnotations:
+    name: showBuildAnnotations
+    description: show workflow annotations on builds and filter builds by annotations
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: false
+  filterMailsByAbac:
+    name: filterMailsByAbac
+    description: Send emails about build statuses based on abac access (if enabled)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  syncClassicAnnotationsToGitOps:
+    name: syncClassicAnnotationsToGitOps
+    description: Sync classic annotations with GitOps platform
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  gitopsArgoCdRollback:
+    name: gitopsArgoCdRollback
+    description: Adds ability to rollback release in native argo cd way
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  commandbar:
+    name: commandbar
+    description: Enables CommandBar in the client
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  gerritIntegration:
+    name: gerritIntegration
+    description: Enables gerrit integration in the account settings
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  disableUserManagement:
+    name: disableUserManagement
+    description: Disables ability to manage users/teams (UI only) for all users
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  skipDataRetentionRestrictedCount:
+    name: skipDataRetentionRestrictedCount
+    description: Skip data retention workflows calculation
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  supportGerrit:
+    name: supportGerrit
+    description: Adds ability to connect Gerrit as git provider
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  virtualScroller:
+    name: virtualScroller
+    description: Enhance pipelines list rendering performance (UI)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  accessibilityContrast:
+    name: accessibilityContrast
+    description: Adds a widget on Classic to change the contrast
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  csdpDisableSyncFromUi:
+    name: csdpDisableSyncFromUi
+    description: Adds ability to disable Sync from UI
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  restrictAccountAdminAll:
+    name: restrictAccountAdminAll
+    description: Restrict access to all endpoints that should be considered as account admin
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  restrictAccountAdminRegistries:
+    name: restrictAccountAdminRegistries
+    description: Restrict access to registries endpoints except account admin
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  restrictAccountAdminKubernetes:
+    name: restrictAccountAdminKubernetes
+    description: Restrict access to kubernetes integrations endpoints except account admin
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  restrictAccountAdminClusters:
+    name: restrictAccountAdminClusters
+    description: Restrict access to clusters endpoints except account admin
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  restrictAccountAdminAgents:
+    name: restrictAccountAdminAgents
+    description: Restrict access to agents endpoints except account admin
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  enforceRuntimeLimits:
+    name: enforceRuntimeLimits
+    description: Enforce hybrid runtime limits
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  disableInviteWelcomeMail:
+    name: disableInviteWelcomeMail
+    description: Disables sending welcome invite mail for account
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  abacHermesTriggers:
+    name: abacHermesTriggers
+    description: Restrict access to managing non git-triggers (hermes) for users without permission to edit pipelines
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  getThemeFromBackend:
+    name: getThemeFromBackend
+    description: Persist theme value in database light/dark/contrast
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitopsAppGroups:
+    name: gitopsAppGroups
+    description: 'Adds ability to group applications by annotation ''codefresh.io/app-group'' '
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  cronTriggersInPipelineSpec:
+    name: cronTriggersInPipelineSpec
+    description: Ability to define cronTriggers via adding to pipeline 'spec.cronTriggers' array
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  gitopsEnvironments:
+    name: gitopsEnvironments
+    description: Enables environments view for gitops platform
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  accountInfoCopyButton:
+    name: accountInfoCopyButton
+    description: Adds ability to copy link with account specific info
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: false
+  genAIEndpoints:
+    name: genAIEndpoints
+    description: Exposes GenAI endpoints for the clients to consume
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  genAIEnforceRateLimits:
+    name: genAIEnforceRateLimits
+    description: Enforces rate limit per user id in GenAI endpoints that use the rate limit middleware
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelineScopes:
+    name: pipelineScopes
+    description: Add scopes to limit the key injected to steps
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: false
+  classicEnvironments:
+    name: classicEnvironments
+    description: Enables environments view used in classic platform
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: true
+      GITOPS_AND_CLASSIC: true
+      PROJECT_ONE: true
+    systemFeature: false
+  abacAndRule:
+    name: abacAndRule
+    description: Enables AND rule logic for abac
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  triggerRepoCaseInsensitive:
+    name: triggerRepoCaseInsensitive
+    description: Enables search by trigger.repo in pipeline-manager with case-insensitive option
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: false
+  reportTotalInitDuration:
+    name: reportTotalInitDuration
+    description: 'report total init time duration to ui and dataDog, this time includes reties and initiate flow '
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  genAICronExpression:
+    name: genAICronExpression
+    description: Adds ability to generate CRON expression using generative AI, UI related
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  supportOpenIdConnectInBuilds:
+    name: supportOpenIdConnectInBuilds
+    description: Enables support for generating OpenIdConnect (OIDC) id tokens to access resources from cloud providers in builds
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  csdpFilterAppsByGitPermissions:
+    name: csdpFilterAppsByGitPermissions
+    description: Hides git-sources and related applications when user doesn't have git permissions or when user doesn't have git credentials. Used only in on-premises installations
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  promotionWorkflows:
+    name: promotionWorkflows
+    description: Shows promotion workflows in the application menu
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  promotionFlow:
+    name: promotionFlow
+    description: Allows product components to be draggable and enables a promotion flow
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  useRepoAndBranchesNextPagination:
+    name: useRepoAndBranchesNextPagination
+    description: Use the logic when classic application gets repos and branches using pagination with `next` link to the next portion of data
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  appDiffView:
+    name: appDiffView
+    description: Feature provides a visual representation of the differences between the normalizedLiveState and predictedLiveState
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: false
+  stepTimeout:
+    name: stepTimeout
+    description: Adds an ability to specify timeout field for steps in pipelines. If step execution time exceeds the timeout, the step will be terminated
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: false
+  environmentsInfinityScroll:
+    name: environmentsInfinityScroll
+    description: Switch the product components list to paginated loading with infinite scroll in the environments page.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  helmHostedRuntime:
+    name: helmHostedRuntime
+    description: Install hosted runtimes using the gitops runtime helm chart
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  apiBroadcasterEnabled:
+    name: apiBroadcasterEnabled
+    description: Enables usage of argo-platform-broadcaster service instead of api-graphql for subscriptions
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  buildsTreeView:
+    name: buildsTreeView
+    description: Enables new tab on build details page with convenient tree view which allows to track all the connections between parent/child builds of currently viewed workflow
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: false
+  preFillBuildVariablesFromURL:
+    name: preFillBuildVariablesFromURL
+    description: Enables ability to create & share URL with pre-filled build variables
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  headerLiveState:
+    name: headerLiveState
+    description: Enables ability to display application info from AppProxy
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  promotionPolicies:
+    name: promotionPolicies
+    description: Enables promotion policies view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  productReleasesPage:
+    name: productReleasesPage
+    description: Enables product's releases page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  gitopsRuntimeObservability:
+    name: gitopsRuntimeObservability
+    description: Enables dashboards with metrics per runtime
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  promotionOrchestration:
+    name: promotionOrchestration
+    description: Enables promotion orchestration for products including product's releases API and promotion flow API
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  mainReleasesPage:
+    name: mainReleasesPage
+    description: Enables the main releases page, allowing users to view releases from all products
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  autoBuildSwitchAccount:
+    name: autoBuildSwitchAccount
+    description: when enabled instead of showing the account switch dialog the account will automatically be switched
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false
+  rolloutPlayerLiveState:
+    name: rolloutPlayerLiveState
+    description: Enables ability to display rollout info from AppProxy
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  piplineCreditConsumption:
+    name: piplineCreditConsumption
+    description: Enables pipeline credit consumption analytic
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  productCRD:
+    name: productCRD
+    description: Enables Product CRD functionality
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  abacUIEnforcement:
+    name: abacUIEnforcement
+    description: Classic platform. When enabled UI prevents user from doing forbidden actions or selecting forbidden options.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  abacV2UIEnforcement:
+    name: abacV2UIEnforcement
+    description: GitOps platform. When enabled UI prevents user from doing forbidden actions or selecting forbidden options.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  abacRuntimeEnvironments:
+    name: abacRuntimeEnvironments
+    description: when enabled user can configure ABAC rules related to Runtime Environments
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  reportBuildStatusPerPipelineTriggerEvent:
+    name: reportBuildStatusPerPipelineTriggerEvent
+    description: For bitbucket commit report build statuses per (pipeline & pipeline trigger & event) instead of only pipeline. E.g. in case if for commit 3 build started you will see 3 checks instead of 1 in your git repo
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  serviceAccounts:
+    name: serviceAccounts
+    description: Enables ability to create a shared service account user that's not tied to any specific person and holds account api-keys
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  analyticsCommittersListTable:
+    name: analyticsCommittersListTable
+    description: Enables committers list table in the analytics page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  modulesConfigurationPage:
+    name: modulesConfigurationPage
+    description: Gives access to Modules page with sidemenu settings
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: false
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: true
+    systemFeature: true
+  batchRefsResolvmentApiGraphql:
+    name: batchRefsResolvmentApiGraphql
+    description: This flag  is used for performance optimization to retrieve references via findAll instead of findOne (in batch by resource kind)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hideHelmBoardsMenuItem:
+    name: hideHelmBoardsMenuItem
+    description: Hide Helm Boards menu item
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  hideKubernetesServicesMenuItem:
+    name: hideKubernetesServicesMenuItem
+    description: Hide Kubernetes Services menu item
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  hideHelmReleasesMenuItem:
+    name: hideHelmReleasesMenuItem
+    description: Hide Helm Releases menu item
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  hideHelmChartsMenuItem:
+    name: hideHelmChartsMenuItem
+    description: Hide Helm Charts menu item
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  limitAmountOfApplicationTreeWithErrorsRequests:
+    name: limitAmountOfApplicationTreeWithErrorsRequests
+    description: Limit amount of applicationTree with errors requests
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newLogo:
+    name: newLogo
+    description: Show new logo
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  currentStateNodeExpand:
+    name: currentStateNodeExpand
+    description: Dynamically expand the current state chart nodes based on their content.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  newVariablesConfiguration:
+    name: newVariablesConfiguration
+    description: New component for variables configuration
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  yamlTreeJsonPathBuilder:
+    name: yamlTreeJsonPathBuilder
+    description: A component that displays YAML as a tree, allowing users to select a path and generate a corresponding JSONPath from it.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  gitopsGroupsPage:
+    name: gitopsGroupsPage
+    description: Shows gitOps Groups page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  multiSource:
+    name: multiSource
+    description: This feature enables support for ArgoCD multi-source feature -- the multi-source info will be displayed on the Applications pages (releases, current state).
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  useSeparatePlanner:
+    name: useSeparatePlanner
+    description: Use the planner from a separate repository https://github.com/codefresh-io/planner instead of the embedded.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  promotionCommitStatuses:
+    name: promotionCommitStatuses
+    description: Enables git commit statuses for product release promotions.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  gitopsOnboarding:
+    name: gitopsOnboarding
+    description: Adds UX tips to GitOps platform in order to improve user flow and provide better onboarding.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hidePipelinesMenuItems:
+    name: hidePipelinesMenuItems
+    description: Hide all pipelines-related menu items.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  hideUsageMenuItem:
+    name: hideUsageMenuItem
+    description: Hide usage menu item.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  argoHubWelcomeScreen:
+    name: argoHubWelcomeScreen
+    description: Enables ArgoHub welcome screen.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  runtimeInstallationWizard:
+    name: runtimeInstallationWizard
+    description: Enables new runtime installation flow wizard
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  argoHubPayments:
+    name: argoHubPayments
+    description: Enables ArgoHub payments view.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  promotionHooks:
+    name: promotionHooks
+    description: Enables hooks on product release promotion flows
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hideClassicRelatedSectionsFromUserSettings:
+    name: hideClassicRelatedSectionsFromUserSettings
+    description: Hides classic related sections from user settings
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault:
+      GITOPS: true
+      CLASSIC: false
+      GITOPS_AND_CLASSIC: false
+      PROJECT_ONE: false
+    systemFeature: true
+  userUsageReport:
+    name: userUsageReport
+    description: Enables button in admin users view to export list of the user's last login date for the period as PDF
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  useGitOpsPaymentPlans:
+    name: useGitOpsPaymentPlans
+    description: Use new GitOps plans for new accounts
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  disableAppProxyApolloQueryDeduplication:
+    name: disableAppProxyApolloQueryDeduplication
+    description: Disabling (app-proxy) Apollo's queryDeduplication feature
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  workflowPipelinesPage:
+    name: workflowPipelinesPage
+    description: Enables Workflow Pipelines page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: false
+    systemFeature: true
+  hideActivityLogsFeature:
+    name: hideActivityLogsFeature
+    description: Disabling activity logs feature in header
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  newUsersAndTeamsPages:
+    name: newUsersAndTeamsPage
+    description: Enables new users and teams pages
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitopsPlanEnforcement:
+    name: gitopsPlanEnforcement
+    description: Enable enforcement according to GitOps Plan. Includes monitoring resource limits and disabling actions, showing banners when plan limits reached.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  useGitOpsPaymentPlansReducedPrice:
+    name: useReducedPrice
+    description: Set a 1 USD price for the paid subscription with a real card. For TESTING purposes only
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  unmappedAppsProductView:
+    name: unmappedAppsProductView
+    description: Enables unmapped apps view in the product view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  hideNativeWorkflowLink:
+    name: hideNativeWorkflowLink
+    description: Disabling ability to navigate to native argo workflow from the workflow view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  hideWorkflowActions:
+    name: hideWorkflowActions
+    description: Hides delete, resubmit, terminate and suspend workflow actions
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  iscGithubRepo:
+    name: iscGithubRepo
+    description: Use only Github repository for ISC.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hideCodefreshCIIntegration:
+    name: hideCodefreshCIIntegration
+    description: Disabling ability to add Codefresh CI integration in GitOps
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hideModulesSelection:
+    name: hideModulesSelection
+    description: Hides modules column in the modules page. Pages column still shows list of pages that are available for the user based on the system type.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newProductsList:
+    name: newProductsList
+    description: Enables new products list view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  hideImagesMenuItem:
+    name: hideImagesMenuItem
+    description: Hide Images menu item
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hideProductManageApps:
+    name: hideProductManageApps
+    description: Hide ability to manage apps directly from the product view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  gitopsFreePlanEnforcement:
+    name: gitopsFreePlanEnforcement
+    description: Enable enforcement according to GitOps Plan. Includes locking user on billing page when not paying.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  helpHubInSidebar:
+    name: helpHubInSidebar
+    description: Enables Help Hub button in the sidebar
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitopsEnvironmentsGroupedMode:
+    name: gitopsEnvironmentsGroupedMode
+    description: Enables grouped mode for environments view
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  csdpAppAndAppSetWithoutManifestFields:
+    name: csdpAppAndAppSetWithoutManifestFields
+    description: Gitops Application Tree optimization. It will use improved MongoDB agregation pipeline when enabled. Gitops apps and app sets will be extracted from DB without heavy manifest fields (when need to read >2k items)
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  pipelineTriggerOptimization:
+    name: pipelineTriggerOptimization
+    description: Enables optimization for requests from pipeline manager to cf-api internal for getting trigger information
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  relativeFilesPromotions:
+    name: relativeFilesPromotions
+    description: Adds ability to promote files from relative path
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  gitlabSupportInRuntimeWizard:
+    name: gitlabSupportInRuntimeWizard
+    description: Adds ability to connect Gitlab as git provider in runtime installation wizard
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  bitbucketSupportInRuntimeWizard:
+    name: bitbucketSupportInRuntimeWizard
+    description: Adds ability to connect Bitbucket as git provider in runtime installation wizard
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  extendedRepositoryFetchLimit:
+    name: extendedRepositoryFetchLimit
+    description: Force use limit 5k when fetching repository list when running a pipeline or creating a trigger. Relevant only for some of git providers, as for example Bitbucket and Github use pagination approach instead.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  promotionsEarlyAccessWarning:
+    name: promotionsEarlyAccessWarning
+    description: Shows warning message that promotions are in early access
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newUserSettingsPage:
+    name: newUserSettingsPage
+    description: Enables new user settings page based on Gitops UI under /2.0 path
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  hideClassicRelatedSectionsFromNewUserSettingsPage:
+    name: hideClassicRelatedSectionsFromNewUserSettingsPage
+    description: Hides classic-only related sections from new user settings page
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  newPromotionEndpoints:
+    name: newPromotionEndpoints
+    description: Uses new endpoints for retrieval of product promotions(releases) across all corresponding views.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  productCRDCommitFlow:
+    name: productCRDCommitFlow
+    description: Enables commit flow when creating product
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  disableApplicationTreeViewForLargeTrees:
+    name: disableApplicationTreeViewForLargeTrees
+    description: Disables the application tree if the number of applications exceeds the limit. The limit can be overridden using the APPLICATION_TREE_SIZE_LIMIT variable
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  executePipelineHooksOnlyOnce:
+    name: executePipelineHooksOnlyOnce
+    description: When enabled executes on_finish and on_elected hooks only once for pipelines that have approval step.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  useRuntimeUpdateChannels:
+    name: useRuntimeUpdateChannels
+    description: Enable support for runtime release channels. Use pre-computed release data from GitHub Pages instead of GitHub API.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  forbidDecryptNonAdmin:
+    name: forbidDecryptNonAdmin
+    description: When enabled, prevents non-account-admin users from decrypting secrets.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: true
+    onPremDefault: true
+    systemFeature: true
+  maskTriggerSecrets:
+    name: maskTriggerSecrets
+    description: When enabled, masks trigger secrets for pipeline endpoints.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  hideRolloutInstallation:
+    name: hideRolloutInstallation
+    description: When enabled, hides button install rollouts on remote cluster on gitops.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  commandPalette:
+    name: commandPalette
+    description: Enables in-house solution for command palette instead of using external library
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  guidesAndSurveys:
+    name: guidesAndSurveys
+    description: Enables Amplitude's Guides and Surveys
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: true
+    systemFeature: true
+  abacV2ViewPermissions:
+    name: abacV2ViewPermissions
+    description: Enables VIEW permissions enforcement for GitOps entities
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  runtimeStatusPanel:
+    name: runtimeStatusPanel
+    description: Enables new runtime status panel for gitops
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  useActualAccountNameInNewNode:
+    name: useActualAccountNameInNewNode
+    description: When registering a new node, use the actual account name in its name, label and tag to avoid name collision and provide better isolation.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  allowClassicPipelineLimitsToBeDefined:
+    name: allowClassicPipelineLimitsToBeDefined
+    description: Resolve dind pod cpu/memory requests/limits from the pipeline spec's resources block (spec.resources / spec.triggers[].resources / spec.cronTriggers[].resources) instead of the classic single runtimeEnvironment.cpu/memory value.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  enableAwsRegionStrictValidation:
+    name: enableAwsRegionStrictValidation
+    description: When enabled, enforces strict validation of AWS regions according to public list available in AWS SDK.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  enableApiKeysIpAllowlist:
+    name: enableApiKeysIpAllowlist
+    description: Account admins can restrict API key usage to an allowlist of IP addresses. Exposes the allowlist management API and UI; enforcement additionally requires the account-level allowlist switch to be turned on.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  showOriginalBuildInfo:
+    name: showOriginalBuildInfo
+    description: If some classic build has been restarted, it shows short previous build information in the build header.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  disableHighlightOfRequirePruningResources:
+    name: disableHighlightOfRequirePruningResources
+    description: Show resources that require pruning without sync status indication if there isn't any. Mostly relevant for resources that do not participate in the sync according to argo-cd and thus conceptually should not be considered require pruning and out of sync
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: true
+  enableGitRequestsCache:
+    name: enableGitRequestsCache
+    description: Cache git provider responses (currently, only supported for Bitbucket Cloud). When off, every outgoing API request is made live and no cache is read or written, regardless of any git context's own caching toggle. Caching happens only when this flag AND the per-git-context toggle are both on.
+    launchDarklySource: true
+    kind: boolean
+    type: regular
+    default: false
+    onPremDefault: false
+    systemFeature: false

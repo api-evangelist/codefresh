@@ -1,0 +1,12 @@
+{
+ "url": "https://g.codefresh.io/api/openapi.json",
+ "final": "https://g.codefresh.io/api/openapi.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 790413,
+ "sha256": "6b5473503aced3a31865931ea91105efe06e9d0eeae7b5b6228dadaa233f8b88",
+ "fetched_at": "2026-10-19",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "re-archived: the provider's current document replaced a stale archive (roadmap#793); the old files are in openapi/_superseded/2026-10-19-stale"
+}
