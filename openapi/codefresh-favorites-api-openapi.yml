@@ -4292,3 +4292,9 @@ x-features:
     default: false
     onPremDefault: false
     systemFeature: false
+x-provenance:
+  method: harvested
+  publisher: Codefresh
+  source: https://g.codefresh.io/api/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
