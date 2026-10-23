@@ -14,6 +14,9 @@ checked:
 - opentofu/integrations/opentofu-integration-edges.yml
 - terraform/integrations/terraform-integration-edges.yml
 - artifact-hub/integrations/artifact-hub-integration-edges.yml
+- https://landscape.cd.foundation/data/full.json
+- https://plugins.jenkins.io/api/plugin/
+- https://plugins.jenkins.io/api/plugins
 marketplace_apps: []
 edges:
 - partner_name: GitHub Marketplace (actions)
@@ -220,6 +223,36 @@ edges:
   category: Artifact Hub listing (Helm chart)
   badges:
   - 'Verified publisher (Artifact Hub verified publisher: repository ownership proven)'
+- partner_name: CD Foundation (Continuous Delivery Foundation landscape)
+  partner: continuous-delivery-foundation
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  category: Continuous delivery foundation membership / landscape
+  evidence: https://landscape.cd.foundation/
+  contract_reference:
+    register: CD Foundation landscape (landscape.cd.foundation/data/full.json)
+    spec_file: null
+    standard: Continuous Delivery Foundation
+    role: cdf-member (General)
+    registered_name: Codefresh
+    registered_names:
+    - Codefresh
+    website: https://codefresh.io/
+    matched_domain: codefresh.io
+    matched_by: domain
+    member_tier: General
+    landscape_categories:
+    - CI & Pipeline Orchestration / Pipeline Orchestration
+    cdf_projects: []
+    signal_note: 'participation only: CDF membership or a landscape listing is standard-participant evidence, never
+      depth; tier, categories and entries are context, never counted'
+    detected_by: sweep-jenkins-cd-foundation-plugins.py
+    detected: '2026-10-22'
+  detected_by: sweep-jenkins-cd-foundation-plugins.py
+  first_seen: '2026-10-22'
 source:
 - https://github.com/marketplace?type=actions
 - https://marketplace.atlassian.com/
