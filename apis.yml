@@ -180,6 +180,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - ABAC
+  tags_raw:
   - Abac
   properties:
   - type: OpenAPI
@@ -190,6 +192,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Account
+  tags_raw:
   - account
   properties:
   - type: OpenAPI
@@ -200,7 +204,8 @@ apis:
     The accounts.getArchiveList API from Codefresh — 1 operation(s) for accounts.getarchivelist.
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
-  tags:
+  tags: []
+  tags_raw:
   - accounts.getArchiveList
   properties:
   - type: OpenAPI
@@ -221,6 +226,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Analytic
+  tags_raw:
   - analytic
   properties:
   - type: OpenAPI
@@ -241,6 +248,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Charts
+  tags_raw:
   - charts
   properties:
   - type: OpenAPI
@@ -261,6 +270,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Customers
+  tags_raw:
   - customer
   properties:
   - type: OpenAPI
@@ -271,6 +282,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Customers
+  tags_raw:
   - customers
   properties:
   - type: OpenAPI
@@ -281,6 +294,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Downloads
+  tags_raw:
   - download
   properties:
   - type: OpenAPI
@@ -311,6 +326,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Favorites
+  tags_raw:
   - favorites
   properties:
   - type: OpenAPI
@@ -331,6 +348,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - GitOps
+  tags_raw:
   - Gitops
   properties:
   - type: OpenAPI
@@ -432,6 +451,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Intelligent Document Processing
+  tags_raw:
   - idp
   properties:
   - type: OpenAPI
@@ -442,6 +463,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Image
+  tags_raw:
   - Images
   properties:
   - type: OpenAPI
@@ -462,6 +485,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - OpenID Connect
+  tags_raw:
   - OIDC
   properties:
   - type: OpenAPI
@@ -502,6 +527,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -603,6 +630,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Segment
+  tags_raw:
   - segment
   properties:
   - type: OpenAPI
@@ -613,6 +642,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Service Users
+  tags_raw:
   - service-users
   properties:
   - type: OpenAPI
@@ -633,6 +664,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
@@ -683,6 +716,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - User
+  tags_raw:
   - user
   properties:
   - type: OpenAPI
@@ -693,6 +728,8 @@ apis:
   humanURL: https://g.codefresh.io/api/
   baseURL: https://g.codefresh.io/api
   tags:
+  - Verification
+  tags_raw:
   - verification
   properties:
   - type: OpenAPI
